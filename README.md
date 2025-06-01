@@ -26,49 +26,48 @@ This cybersecurity educational website serves as an interactive learning platfor
 
 ## 🛠️ Tech Stack
 ### 1. Frontend Technologies:
-· HTML5: Semantic markup and structure
-· CSS3: Modern styling with Flexbox/Grid layouts
-· JavaScript (ES6+): Interactive functionality and dynamic content
+· **HTML5**: Semantic markup and structure
+· **CSS3**: Modern styling with Flexbox/Grid layouts
+· **JavaScript (ES6+)**: Interactive functionality and dynamic content
 
 ### 2. Development Tools:
-· Version Control: Git for source code management
-· Code Editor: Compatible with VS Code, Sublime Text, or any preferred editor
-· Browser DevTools: For debugging and testing
-· Lighthouse: Performance and accessibility auditing
+· **Version Control**: Git for source code management
+· **Code Editor**: Compatible with VS Code, Sublime Text, or any preferred editor
+· **Browser DevTools**: For debugging and testing
+· **Lighthouse**: Performance and accessibility auditing
 
 ### 3. Optional Enhancements:
-· Font Awesome: Icon library for enhanced UI elements
-· Google Fonts: Typography enhancement
-· Chart.js: Data visualization for security metrics (if applicable)
-
+· **Font Awesome**: Icon library for enhanced UI elements
+· **Google Fonts**: Typography enhancement
+· **Chart.js**: Data visualization for security metrics (if applicable)
 
 ## 🎯 Project Goals
 ### Primary Objectives:
-· Education: Provide accessible cybersecurity education to diverse audiences
-· Awareness: Increase understanding of digital threats and vulnerabilities
-· Empowerment: Enable users to implement effective security practices
-· Engagement: Create interactive and memorable learning experiences
+· **Education**: Provide accessible cybersecurity education to diverse audiences
+· **Awareness**: Increase understanding of digital threats and vulnerabilities
+· **Empowerment**: Enable users to implement effective security practices
+· **Engagement**: Create interactive and memorable learning experiences
 
-Secondary Objectives:
-· Community Building: Foster a community of security-conscious individuals
-· Resource Hub: Serve as a centralized repository for cybersecurity information
-· Skill Development: Help users develop practical cybersecurity skills
-· Industry Preparation: Prepare students for cybersecurity careers
+### Secondary Objectives:
+· **Community Building**: Foster a community of security-conscious individuals
+· **Resource Hub**: Serve as a centralized repository for cybersecurity information
+· **Skill Development**: Help users develop practical cybersecurity skills
+· **Industry Preparation**: Prepare students for cybersecurity careers
 
-Long-term Vision:
-· Expand content library with advanced topics
-· Implement user accounts and personalized learning paths
-· Add certification preparation modules
-· Integrate with cybersecurity news feeds and threat intelligence
+### Long-term Vision:
+· **Expand content library with advanced topics**
+· **Implement user accounts and personalized learning paths**
+· **Add certification preparation modules**
+· **Integrate with cybersecurity news feeds and threat intelligence**
 
-🚀 Setup Guide
-Prerequisites:
-Web browser (Chrome, Firefox, Safari, Edge)
-Text editor or IDE
-Local web server (optional but recommended for development)
+## 🚀 Setup Guide
+### Prerequisites:
+· **Web browser (Chrome, Firefox, Safari, Edge)**
+· **Text editor or IDE**
+· **Local web server (optional but recommended for development)**
 
-Installation Steps:
-METHOD 1: Direct Download
+### Installation Steps:
+## METHOD 1: Direct Download
 Clone the Repository
 bash
 git clone https://github.com/mtxmln-devs/Cybersecurity-Educational-Website.git
@@ -76,7 +75,8 @@ cd Cybersecurity-Educational-Website
 Open the Website
 Double-click index.html to open in your default browser
 Or right-click and select "Open with" your preferred browser
-METHOD 2: Local Server Setup (Recommended)
+
+### METHOD 2: Local Server Setup (Recommended)
 Clone the Repository
 bash
 git clone https://github.com/mtxmln-devs/Cybersecurity-Educational-Website.git
@@ -114,8 +114,8 @@ git push origin feature/your-feature-name
 
 
 
-📁 Project Structure
-Cybersecurity-Educational-Website/
+## 📁 Project Structure
+### Cybersecurity-Educational-Website/
 ├── First page/
 ├── form.html                      # Login / Register Form
 ├──
@@ -177,25 +177,23 @@ Cybersecurity-Educational-Website/
 
 
 
-🤝 Contributing
-I welcome contributions to improve the educational content and functionality! Please read my contributing guidelines and submit pull requests for review.
+## 🤝 Contributing
+### I welcome contributions to improve the educational content and functionality! Please read my contributing guidelines and submit pull requests for review.
 
 
-
-🆘 Support
-If you encounter any issues or have questions:
+## 🆘 Support
+### If you encounter any issues or have questions:
 · Check the Issues section on GitHub
 · Contact Me
 · Review the documentation
 
 
-
-🔄 Updates
-Stay updated with the latest security information and website improvements by watching this repository for updates.
-
+## 🔄 Updates
+### Stay updated with the latest security information and website improvements by watching this repository for updates.
 
 
-Disclaimer: This website is for educational purposes only. Always consult with cybersecurity professionals for specific security implementations in production environments.
+
+## Disclaimer: This website is for educational purposes only. Always consult with cybersecurity professionals for specific security implementations in production environments.
 
 
 
