@@ -15,10 +15,8 @@ This cybersecurity educational website serves as an interactive learning platfor
 · Password Security Tools: Interactive password strength checker and generation tips
 · Phishing Awareness Training: Recognition techniques and prevention strategies
 · Data Protection Guidelines: Information on privacy, encryption, and secure data handling
-
 2. User Experience Features:
 · Responsive Design: Optimized for desktop, tablet, and mobile devices
-
 3. Technical Features:
 · Fast Loading: Optimized performance with minimal load times
 · Cross-browser Compatibility: Works seamlessly across all modern browsers
@@ -26,25 +24,25 @@ Accessibility Compliant: WCAG guidelines implementation for inclusive design
 SEO Optimized: Enhanced visibility 
 
 
+
 🛠️ Tech Stack
 1. Frontend Technologies:
 · HTML5: Semantic markup and structure
 · CSS3: Modern styling with Flexbox/Grid layouts
 · JavaScript (ES6+): Interactive functionality and dynamic content
-
 2. Development Tools:
 Version Control: Git for source code management
 Code Editor: Compatible with VS Code, Sublime Text, or any preferred editor
 Browser DevTools: For debugging and testing
 Lighthouse: Performance and accessibility auditing
-
-2. Optional Enhancements:
+3. Optional Enhancements:
 · Font Awesome: Icon library for enhanced UI elements
 · Google Fonts: Typography enhancement
 · Chart.js: Data visualization for security metrics (if applicable)
 
 
-  🎯 Project Goals
+
+🎯 Project Goals
 Primary Objectives:
 · Education: Provide accessible cybersecurity education to diverse audiences
 · Awareness: Increase understanding of digital threats and vulnerabilities
@@ -78,8 +76,6 @@ cd Cybersecurity-Educational-Website
 Open the Website
 Double-click index.html to open in your default browser
 Or right-click and select "Open with" your preferred browser
-
-
 METHOD 2: Local Server Setup (Recommended)
 Clone the Repository
 bash
@@ -115,6 +111,7 @@ bash
 git add .
 git commit -m "Add your descriptive commit message"
 git push origin feature/your-feature-name
+
 
 
 📁 Project Structure
@@ -179,8 +176,11 @@ Cybersecurity-Educational-Website/
 └── README.md              # Project documentation
 
 
+
 🤝 Contributing
 I welcome contributions to improve the educational content and functionality! Please read my contributing guidelines and submit pull requests for review.
+
+
 
 🆘 Support
 If you encounter any issues or have questions:
@@ -188,8 +188,12 @@ If you encounter any issues or have questions:
 · Contact Me
 · Review the documentation
 
+
+
 🔄 Updates
 Stay updated with the latest security information and website improvements by watching this repository for updates.
+
+
 
 Disclaimer: This website is for educational purposes only. Always consult with cybersecurity professionals for specific security implementations in production environments.
 
