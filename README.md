@@ -7,8 +7,8 @@
 ## 📋 Overview
 This cybersecurity educational website serves as an interactive learning platform that provides users with essential knowledge about digital security, threat awareness, and protective measures. The website combines educational content with practical examples and interactive elements to create an engaging learning experience for students, professionals, and anyone interested in improving their cybersecurity knowledge.
 
-✨ Features
-1. Core Educational Features:
+## ✨ Features
+### 1. Core Educational Features:
 · Interactive Learning Modules: Step-by-step tutorials covering fundamental cybersecurity concepts
 · Security Best Practices Guide: Comprehensive guidelines for personal and organizational security
 · Password Security Tools: Interactive password strength checker and generation tips
