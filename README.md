@@ -16,33 +16,32 @@ This cybersecurity educational website serves as an interactive learning platfor
 · Phishing Awareness Training: Recognition techniques and prevention strategies
 · Data Protection Guidelines: Information on privacy, encryption, and secure data handling
 
-2. User Experience Features
-·Responsive Design: Optimized for desktop, tablet, and mobile devices
+2. User Experience Features:
+· Responsive Design: Optimized for desktop, tablet, and mobile devices
 
-3. Technical Features
-Fast Loading: Optimized performance with minimal load times
-Cross-browser Compatibility: Works seamlessly across all modern browsers
+3. Technical Features:
+· Fast Loading: Optimized performance with minimal load times
+· Cross-browser Compatibility: Works seamlessly across all modern browsers
 Accessibility Compliant: WCAG guidelines implementation for inclusive design
 SEO Optimized: Enhanced visibility 
 
 
 🛠️ Tech Stack
-1. Frontend Technologies
-HTML5: Semantic markup and structure
-CSS3: Modern styling with Flexbox/Grid layouts
-JavaScript (ES6+): Interactive functionality and dynamic content
-Responsive Design: Mobile-first approach with media queries
+1. Frontend Technologies:
+· HTML5: Semantic markup and structure
+· CSS3: Modern styling with Flexbox/Grid layouts
+· JavaScript (ES6+): Interactive functionality and dynamic content
 
-2. Development Tools
+2. Development Tools:
 Version Control: Git for source code management
 Code Editor: Compatible with VS Code, Sublime Text, or any preferred editor
 Browser DevTools: For debugging and testing
 Lighthouse: Performance and accessibility auditing
 
-2. Optional Enhancements
-Font Awesome: Icon library for enhanced UI elements
-Google Fonts: Typography enhancement
-Chart.js: Data visualization for security metrics (if applicable)
+2. Optional Enhancements:
+· Font Awesome: Icon library for enhanced UI elements
+· Google Fonts: Typography enhancement
+· Chart.js: Data visualization for security metrics (if applicable)
 
 
   🎯 Project Goals
@@ -58,11 +57,11 @@ Secondary Objectives:
 · Skill Development: Help users develop practical cybersecurity skills
 · Industry Preparation: Prepare students for cybersecurity careers
 
-Long-term Vision
+Long-term Vision:
 · Expand content library with advanced topics
 · Implement user accounts and personalized learning paths
 · Add certification preparation modules
-Integrate with cybersecurity news feeds and threat intelligence
+· Integrate with cybersecurity news feeds and threat intelligence
 
 🚀 Setup Guide
 Prerequisites:
@@ -70,8 +69,8 @@ Web browser (Chrome, Firefox, Safari, Edge)
 Text editor or IDE
 Local web server (optional but recommended for development)
 
-Installation Steps
-Method 1: Direct Download
+Installation Steps:
+METHOD 1: Direct Download
 Clone the Repository
 bash
 git clone https://github.com/mtxmln-devs/Cybersecurity-Educational-Website.git
@@ -79,7 +78,9 @@ cd Cybersecurity-Educational-Website
 Open the Website
 Double-click index.html to open in your default browser
 Or right-click and select "Open with" your preferred browser
-Method 2: Local Server Setup (Recommended)
+
+
+METHOD 2: Local Server Setup (Recommended)
 Clone the Repository
 bash
 git clone https://github.com/mtxmln-devs/Cybersecurity-Educational-Website.git
@@ -119,34 +120,56 @@ git push origin feature/your-feature-name
 
 📁 Project Structure
 Cybersecurity-Educational-Website/
-├── index.html              # Main homepage
-├── css/
-│   ├── style.css          # Main stylesheet
-│   ├── responsive.css     # Mobile responsiveness
-│   └── themes.css         # Theme variations
-├── js/
-│   ├── main.js            # Core functionality
-│   ├── quiz.js            # Quiz functionality
-│   └── utils.js           # Utility functions
-├── images/
-│   ├── logos/             # Brand assets
-│   ├── illustrations/     # Educational graphics
-│   └── icons/             # UI icons
+├── First page/
+├── form.html                      # Login / Register Form
+├──
+├── Home page/
+├── index.html                     # Main homepage
+|
+├── Headers/
+├── home.html                      # Main homepage
+├── about.html                     # about page
+├── services.html                  # service page
+├── contacts.html                  # contacts page
+├── form.html                      # Sign out 
+|
+├── Styles/
+│   ├── (all_html-files).html      # Internal Styles
+│   └── (all_html-files).html      # Theme variations
+│   ├── script.js                  # Mobile responsiveness
+|
+├── Functionality/
+│   ├── script.js                  # Core functionality
+|
+│   ├── Icons/                      
+|   ├── (all_html-files).html      # UI icons
+|
 ├── pages/
-│   ├── modules/           # Learning modules
-│   ├── resources/         # Additional resources
-│   └── about.html         # About page
+│   ├── topics.html                # Learning modules
+│   ├──  facts.html                # Additional resources
+│   |── about.html                 # About page
+│   |── about.html                 # About page
+│   |── about.html                 # About page
+│   |── about.html                 # About page
+│   |── about.html                 # About page
+│   |── about.html                 # About page
+|
+|
+├── Footers/
+├──  
+|
+|
 └── README.md              # Project documentation
 
 
 🤝 Contributing
-We welcome contributions to improve the educational content and functionality! Please read our contributing guidelines and submit pull requests for review.
+I welcome contributions to improve the educational content and functionality! Please read my contributing guidelines and submit pull requests for review.
 
 
 🆘 Support
 If you encounter any issues or have questions:
 · Check the Issues section on GitHub
-· Contact the development team
+· Contact Me
 · Review the documentation
 
 
