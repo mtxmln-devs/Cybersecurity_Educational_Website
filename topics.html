@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FINEX</title>
+  <style>
+    :root {
+      --primary: #0c2461;
+      --secondary: #4a69bd;
+      --accent: #00a8ff;
+      --light: #f5f6fa;
+      --dark: #192a56;
+      --danger: #e74c3c;
+      --shadow-primary: rgba(12, 36, 97, 0.2);
+      --shadow-accent: rgba(0, 168, 255, 0.3);
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, var(--light) 0%, #d7e1f7 100%);
+      color: #2c3e50;
+      line-height: 1.6;
+    }
+    body::-webkit-scrollbar{
+        display: none;
+      }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    /* Header Styles */
+    header {
+      background-color: var(--primary);
+      color: white;
+      padding: 1rem 0;
+      box-shadow: 0 5px 15px var(--shadow-primary);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      letter-spacing: 0.1em;
+    }
+
+    .logo span {
+      color: var(--accent);
+      margin-left: 0.2em;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      margin-bottom: 0;
+    }
+
+    nav ul li {
+      margin-left: 2rem;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+      padding: 0.5rem 0;
+      letter-spacing: 0.05em;
+      font-size: 0.95rem;
+      border-bottom: 3px solid transparent;
+      display: inline-block;
+    }
+
+    nav ul li a:hover {
+      color: var(--accent);
+      border-bottom: 3px solid var(--accent);
+      padding-bottom: 0.2rem;
+    }
+
+    nav ul li a.active {
+      color: var(--accent);
+      border-bottom: 3px solid var(--accent);
+      padding-bottom: 0.2rem;
+    }
+
+    .page-header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+      padding: 3rem 0 3.5rem;
+      margin-bottom: 3rem;
+      text-align: center;
+      box-shadow: 0 7px 25px var(--shadow-primary);
+      border-radius: 0 0 40px 40px;
+    }
+
+    .page-header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+      font-weight: 900;
+      letter-spacing: 0.15em;
+    }
+
+    .page-header p {
+      font-size: 1.15rem;
+      max-width: 650px;
+      margin: 0 auto;
+      font-weight: 500;
+      color: #dfe6f0cc;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Slider Styles */
+    .slider {
+      position: relative;
+      width: 100%;
+      max-width: 1150px;
+      height: 340px;
+      margin: 0 auto 4rem;
+      overflow: hidden;
+      border-radius: 30px;
+      box-shadow:
+        0 15px 40px rgba(12, 36, 97, 0.15),
+        inset 0 0 30px rgba(74, 105, 189, 0.08);
+      background: linear-gradient(135deg, #eaf0fa 0%, #cdd9fb 100%);
+    }
+
+    .topic-card {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 340px;
+      padding: 30px 40px;
+      border-radius: 30px;
+      background: linear-gradient(145deg, #ffffff, #d7e2f9);
+      box-shadow: 0 25px 40px var(--shadow-primary);
+      text-align: center;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease;
+      opacity: 0;
+      transform: translateX(100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .topic-card.active {
+      opacity: 1;
+      transform: translateX(0);
+      box-shadow:
+        0 40px 50px var(--shadow-accent),
+        0 0 40px var(--accent);
+      z-index: 5;
+      transform-origin: center;
+      animation: scaleIn 0.5s ease forwards;
+    }
+
+    .topic-card.previous {
+      opacity: 1;
+      transform: translateX(-100%);
+      z-index: 4;
+    }
+
+    .topic-card.next {
+      opacity: 1;
+      transform: translateX(100%);
+      z-index: 4;
+    }
+    
+    /* Scale In Animation for active card */
+    @keyframes scaleIn {
+      0% {
+        transform: translateX(0) scale(0.95);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+      }
+    }
+
+    .topic-card h2 {
+      font-size: 2.15rem;
+      font-weight: 900;
+      color: var(--dark);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+    }
+
+    .topic-card p {
+      font-size: 1.2rem;
+      color: var(--primary);
+      line-height: 1.5;
+    }
+
+    .topic-card a {
+      align-self: center;
+      padding: 15px 40px;
+      margin-top: 20px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-decoration: none;
+      background: var(--accent);
+      color: white;
+      border-radius: 25px;
+      box-shadow:
+        0 6px 20px var(--shadow-accent);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .topic-card a:hover,
+    .topic-card a:focus {
+      background-color: var(--dark);
+      box-shadow:
+        0 8px 25px rgba(25, 42, 86, 0.7);
+      color: white;
+      outline: none;
+    }
+
+    /* Arrow Buttons */
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: var(--accent);
+      border: none;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      color: white;
+      font-size: 32px;
+      cursor: pointer;
+      box-shadow:
+        0 10px 20px var(--shadow-accent);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .arrow.left {
+      left: 20px;
+    }
+
+    .arrow.right {
+      right: 20px;
+    }
+
+    .arrow:hover,
+    .arrow:focus {
+      background-color: var(--dark);
+      transform: translateY(-50%) scale(1.1);
+      outline: none;
+      box-shadow:
+        0 14px 28px rgba(25, 42, 86, 0.8);
+    }
+
+    /* Pagination */
+    .pagination {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--primary);
+      text-shadow: 0 1px 3px rgba(255,255,255,0.7);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--primary);
+      color: white;
+      padding: 3rem 0;
+      margin-top: 8rem;
+      box-shadow: 0 -7px 15px var(--shadow-primary);
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+
+    .footer-column h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+    }
+
+    .footer-column ul {
+      list-style: none;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 0.7rem;
+      font-size: 1rem;
+      color: #dcdde1;
+    }
+
+    .footer-column ul li a {
+      color: #dcdde1;
+      text-decoration: none;
+      transition: color 0.3s;
+      font-weight: 500;
+    }
+
+    .footer-column ul li a:hover {
+      color: var(--accent);
+    }
+
+    .footer-bottom {
+      margin-top: 2rem;
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      font-size: 0.95rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+      }
+
+      nav ul {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      nav ul li {
+        margin: 0.5rem;
+      }
+
+      .topic-card {
+        height: auto;
+        position: relative;
+        transform: none !important;
+        opacity: 1 !important;
+        box-shadow: 0 15px 30px var(--shadow-primary);
+        margin: 30px 10px;
+        border-radius: 25px;
+        background: linear-gradient(145deg, #f5f8fe, #dde5f6);
+        transition: none !important;
+      }
+
+      .slider {
+        height: auto;
+        overflow: visible;
+        background: transparent;
+        box-shadow: none;
+      }
+
+      .arrow {
+        display: none;
+      }
+
+      .pagination {
+        margin-top: 2rem;
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <a href="index.html" class="logo">FINEX<span></span></a>
+        <nav>
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="services.html">SERVICES</a></li>
+            <li><a href="contacts.html">CONTACTS</a></li>
+            <li><a href="form.html">SIGN OUT</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>TOPICS</h1>
+      <p>Finex provides different fields of informations in cybersecurity that specialize in protecting digital informations of the users.</p>
+    </div>
+  </section>
+
+  <div class="slider" aria-label="Topic card slider" role="region">
+    <div class="topic-card active" aria-hidden="false" tabindex="0">
+      <h2>CYBERSECURITY FACTS</h2>
+      <p>Stay ahead of cyber threats by learning  the simple steps  you can take to secure your online presence.</p>
+      <a href="facts.html" tabindex="0">Read More</a>
+    </div>
+
+    <div class="topic-card next" aria-hidden="true" tabindex="-1">
+      <h2>CYBERSECURITY TIPS</h2>
+      <p>Unlock the secrets to online safety with these practical cybersecurity tips you can use right now.</p>
+      <a href="tips.html" tabindex="-1">Read More</a>
+    </div>
+
+    <div class="topic-card">
+      <h2>CYBERSECURITY TERMINOLOGIES</h2>
+      <p>Familiarize yourself with the key terms that empower you to protect your digital life.</p>
+      <a href="terms.html" tabindex="-1">Read More</a>
+    </div>
+
+    <div class="topic-card">
+      <h2>CYBERSECURITY DO'S AND DON'TS</h2>
+      <p>Learn the simple rules that make a big difference: essential do's and don'ts for everyday cybersecurity.</p>
+      <a href="dos-and-donts.html" tabindex="-1">Read More</a>
+    </div>
+
+    <div class="topic-card">
+      <h2>IMPORTANCE OF CYBERSECURITY</h2>
+      <p>Understand why cybersecurity is crucial in today's digital age and how it affects everyone.</p>
+      <a href="importance.html" tabindex="-1">Read More</a>
+    </div>
+
+    <div class="topic-card">
+      <h2>CYBERSECURITY ETHICS</h2>
+      <p>Discover the ethical principles that guide the defense of digital assets.</p>
+      <a href="ethics.html" tabindex="-1">Read More</a>
+    </div>
+
+    <div class="topic-card">
+      <h2>FUNDAMENTALS OF CYBERSECURITY</h2>
+      <p>Emphasizing the importance of securing personal data and implementing <br> preventive measures to protect against cyber threats.</p>
+      <a href="funda.html" tabindex="-1">Read More</a>
+    </div>
+
+    <div class="topic-card previous" aria-hidden="true" tabindex="-1">
+      <h2>CYBERSECURITY THREATS</h2>
+      <p>Understanding the impact of cybersecurity threats is crucial for making informed decisions <br>   about protecting valuable digital assets.</p>
+      <a href="cyberthreats.html" tabindex="-1">Read More</a>
+    </div>
+
+    <button class="arrow left" aria-label="Previous topic" title="Previous" onclick="changeTopic(-1)">&#x276E;</button>
+    <button class="arrow right" aria-label="Next topic" title="Next" onclick="changeTopic(1)">&#x276F;</button>
+  </div>
+
+  <div class="pagination" aria-live="polite">
+    <span id="page-indicator">1</span> / <span id="total-pages">8</span>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contacts.html">Contacts</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="threatintelligence.html">Financial Threat Intelligence</a></li>
+            <li><a href="compliance.html">Compliance Solutions</a></li>
+            <li><a href="soc.html">SOC Services</a></li>
+            <li><a href="trainingprograms.html">Training Programs</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="terms&conditions.html">Terms & Conditions</a></li>
+            <li><a href="privacypolicy.html">Privacy Policy</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <ul>
+            <li>Email: topics@finex.com</li>
+            <li>Phone: (+639) 123456789</li>
+            <li>Address: 4434, National Road, Nabua,<br /> Camarines Sur</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 FinEx. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    let currentIndex = 0;
+    const topics = document.querySelectorAll('.topic-card');
+    const totalPages = topics.length;
+
+    document.getElementById('total-pages').textContent = totalPages;
+
+    function updateAria() {
+      topics.forEach((card, index) => {
+        if (index === currentIndex) {
+          card.setAttribute('aria-hidden', 'false');
+          card.setAttribute('tabindex', '0');
+        } else {
+          card.setAttribute('aria-hidden', 'true');
+          card.setAttribute('tabindex', '-1');
+        }
+      });
+    }
+
+    function updateClasses() {
+      topics.forEach((card, index) => {
+        card.classList.remove('previous', 'active', 'next');
+        if (index === currentIndex) {
+          card.classList.add('active');
+        } else if (index === (currentIndex - 1 + totalPages) % totalPages) {
+          card.classList.add('previous');
+        } else if (index === (currentIndex + 1) % totalPages) {
+          card.classList.add('next');
+        } else {
+          // place offscreen default
+          card.style.transform = "translateX(100%)";
+        }
+      });
+    }
+
+    function changeTopic(direction) {
+      currentIndex = (currentIndex + direction + totalPages) % totalPages;
+      updateClasses();
+      updateAria();
+      document.getElementById('page-indicator').textContent = currentIndex + 1;
+    }
+
+    // Initialize classes and aria attributes
+    updateClasses();
+    updateAria();
+  </script>
+</body>
+</html>
+

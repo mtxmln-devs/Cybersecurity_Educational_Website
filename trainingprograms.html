@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINEX - Training Programs</title>
+    <style>
+        :root {
+            --primary: #0c2461;
+            --secondary: #4a69bd;
+            --accent: #00a8ff;
+            --light: #f5f6fa;
+            --dark: #192a56;
+            --danger: #e74c3c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f6fa;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin-bottom: 0;
+        }
+
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        nav ul li a.active {
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.3rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column ul li a {
+            color: #dcdde1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            margin-top: 2rem;
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Training Programs Page Styles */
+        .training-programs {
+            padding: 3rem 0;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .training-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .training-content h2 {
+            color: var(--primary);
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .training-content h2:first-child {
+            margin-top: 0;
+        }
+
+        .training-content h3 {
+            color: var(--secondary);
+            margin: 1.5rem 0 1rem;
+        }
+
+        .training-content p {
+            margin-bottom: 1rem;
+        }
+
+        .training-content ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .training-content ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .module-card {
+            background-color: var(--light);
+            border-left: 4px solid var(--secondary);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .module-card h3 {
+            color: var(--primary);
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .module-card ul {
+            margin-bottom: 0;
+        }
+
+        .level-header {
+            background-color: var(--secondary);
+            color: white;
+            padding: 1rem;
+            margin: 2rem 0 1.5rem;
+            border-radius: 8px;
+        }
+
+        .certification-section {
+            background-color: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            border: 1px solid #ddd;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            transition: background-color 0.3s;
+        }
+        .page-header .container p{
+            font-size: 20px;
+        }
+        p{
+            font-size: 18px;
+        }
+
+        .cta-button:hover {
+            background-color: #0097e6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">FINEX</a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="services.html">SERVICES</a></li>
+                        <li><a href="contacts.html">CONTACTS</a></li>
+                        <li><a href="form.html">SIGN OUT</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>CYBERSECURITY TRAINING PROGRAMS</h1>
+            <p>Comprehensive cybersecurity education tailored for financial professionals at all levels</p>
+        </div>
+    </section>
+
+    <section class="training-programs">
+        <div class="container">
+            <div class="training-content">
+                <div class="introduction">
+                    <h2>FINEX Cybersecurity Training Program</h2>
+                    <p>At FINEX, we understand that cybersecurity is a critical component of financial operations. Our comprehensive training program is designed to equip financial professionals with the knowledge and skills needed to protect sensitive financial data and systems from evolving cyber threats.</p>
+                    <p>Our curriculum is structured into four distinct levels, catering to beginners through advanced practitioners, with a focus on practical, real-world applications in the financial sector.</p>
+                    <a href="#contact" class="cta-button">Enroll Now</a>
+                </div>
+
+                <div class="level-header">
+                    <h2>I. Foundational Cybersecurity for Finance (Beginner Level)</h2>
+                </div>
+
+                <div class="module-card">
+                    <h3>Module 1: Introduction to Financial Cybersecurity</h3>
+                    <ul>
+                        <li>Overview of cyber threats in the financial sector</li>
+                        <li>Key cybersecurity principles and terminology</li>
+                        <li>Regulatory landscape (e.g., GDPR, CCPA, industry-specific regulations)</li>
+                        <li>Importance of data protection in finance</li>
+                    </ul>
+                </div>
+
+                <div class="module-card">
+                    <h3>Module 2: Understanding Common Cyber Threats</h3>
+                    <ul>
+                        <li>Phishing and social engineering</li>
+                        <li>Malware and ransomware</li>
+                        <li>Account takeovers and identity theft</li>
+                        <li>Insider threats</li>
+                        <li>ATM and payment fraud</li>
+                    </ul>
+                </div>
+
+                <div class="module-card">
+                    <h3>Module 3: Basic Security Practices for Financial Professionals</h3>
+                    <ul>
+                        <li>Password management and MFA</li>
+                        <li>Safe email and web browsing habits</li>
+                        <li>Data handling and storage best practices</li>
+                        <li>Mobile device security</li>
+                        <li>Physical security awareness</li>
+                    </ul>
+                </div>
+
+                <div class="level-header">
+                    <h2>II. Advanced Cybersecurity for Finance (Intermediate Level)</h2>
+                </div>
+
+                <div class="module-card">
+                    <h3>Module 4: Network Security in Financial Institutions</h3>
+                    <ul>
+                        <li>Network architecture and security controls</li>
+                        <li>Firewalls and intrusion detection/prevention systems</li>
+                        <li>VPNs and secure remote access</li>
+                        <li>Wireless security</li>
+                        <li>Cloud security considerations</li>
+                    </ul>
+                </div>
+
+                <div class="module-card">
+                    <h3>Module 5: Data Protection and Encryption</h3>
+                    <ul>
+                        <li>Data loss prevention (DLP) strategies</li>
+                        <li>Encryption methods and standards</li>
+                        <li>Data access control and authorization</li>
+                        <li>Data backup and recovery</li>
+                        <li>Secure data disposal</li>
+                    </ul>
+                </div>
+
+                <div class="module-card">
+                    <h3>Module 6: Risk Management and Compliance</h3>
+                    <ul>
+                        <li>Cybersecurity risk assessment and management</li>
+                        <li>Compliance requirements for financial institutions</li>
+                        <li>Incident response planning</li>
+                        <li>Business continuity and disaster recovery</li>
+                        <li>Security audits and vulnerability assessments</li>
+                    </ul>
+                </div>
+
+                <div class="level-header">
+                    <h2>III. Specialized Cybersecurity Topics for Finance (Advanced Level)</h2>
+                </div>
+
+                <div class="module-card">
+                    <h3>Module 7: Advanced Threat Intelligence and Analysis</h3>
+                    <ul>
+                        <li>Threat intelligence gathering and analysis</li>
+                        <li>Security information and event management (SIEM)</li>
+                        <li>Behavioral analytics and anomaly detection</li>
+                        <li>Cyber threat hunting</li>
+                        <li>Forensic analysis</li>
+                    </ul>
+                </div>
+
+                <div class="module-card">
+                    <h3>Module 8: Application Security and Secure Coding</h3>
+                    <ul>
+                        <li>Secure software development lifecycle (SSDLC)</li>
+                        <li>Web application security (OWASP Top 10)</li>
+                        <li>API security</li>
+                        <li>Secure coding practices for financial applications</li>
+                        <li>Payment application security</li>
+                    </ul>
+                </div>
+
+                <div class="module-card">
+                    <h3>Module 9: Emerging Technologies and Cybersecurity</h3>
+                    <ul>
+                        <li>Blockchain and cryptocurrency security</li>
+                        <li>Artificial intelligence and machine learning in cybersecurity</li>
+                        <li>IoT security in financial environments</li>
+                        <li>Biometric authentication and security</li>
+                        <li>Quantum computing and its implications for cybersecurity</li>
+                    </ul>
+                </div>
+
+                <div class="level-header">
+                    <h2>IV. Practical Application and Certification</h2>
+                </div>
+
+                <div class="module-card">
+                    <h3>Module 10: Simulated Cyberattack Exercises</h3>
+                    <ul>
+                        <li>Hands-on exercises simulating real-world cyberattacks</li>
+                        <li>Incident response simulations</li>
+                        <li>Penetration testing and vulnerability assessment practice</li>
+                    </ul>
+                </div>
+
+                <div class="certification-section">
+                    <h3>Certification</h3>
+                    <p>Upon successful completion of the program, participants will receive the FINEX Cybersecurity Professional Certification, which includes:</p>
+                    <ul>
+                        <li>Comprehensive online exam</li>
+                        <li>Practical skills assessment</li>
+                        <li>FINEX Cybersecurity Certification valid for 2 years</li>
+                    </ul>
+                    <p>This certification demonstrates your commitment to maintaining the highest standards of cybersecurity in financial operations.</p>
+                    <a href="#" class="cta-button">Get Certified Today</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+</body>
+</html>

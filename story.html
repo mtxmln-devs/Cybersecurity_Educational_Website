@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINEX </title>
+    <style>
+        :root {
+            --primary: #0c2461;
+            --secondary: #4a69bd;
+            --accent: #00a8ff;
+            --light: #f5f6fa;
+            --dark: #192a56;
+            --danger: #e74c3c;
+        }
+        body::-webkit-scrollbar{
+            display: hidden;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        p{
+            font-size: 18px;
+        }
+        body {
+            background-color: #f5f6fa;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        body::-webkit-scrollbar{
+            display: none;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 5px 15px rgba(12, 36, 97, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.1em;
+        }
+        
+        .logo span {
+            color: var(--accent);
+            margin-left: 0.2em;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin-bottom: 0;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+            letter-spacing: 0.05em;
+            font-size: 0.95rem;
+            border-bottom: 3px solid transparent;
+            display: inline-block;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 0.2rem;
+        }
+        
+        nav ul li a.active {
+            color: var(--accent);
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 0.2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-column ul li a {
+            color: #dcdde1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .footer-bottom {
+            margin-top: 2rem;
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Story Styles */
+        .story-section {
+            padding: 3rem 0;
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .story-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .story-content h2 {
+            color: var(--primary);
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .story-content h2:first-child {
+            margin-top: 0;
+        }
+        
+        .story-content p {
+            margin-bottom: 1rem;
+        }
+        
+        .story-section p {
+            margin-left: 10px;
+        }
+        
+        .milestone-card {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .milestone-card h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section {
+            background-color: var(--accent);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .cta-section h2 {
+            color: white;
+            border-bottom: none;
+            margin-top: 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">FINEX</a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="services.html">SERVICES</a></li>
+                        <li><a href="contacts.html">CONTACTS</a></li>
+                        <li><a href="form.html" class="nav-link" data-page="form">SIGN OUT</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>OUR STORY</h1>
+            <p>Discover the journey of FINEX Cybersecurity, from its inception to becoming a leader in protecting the financial sector against cyber threats.</p>
+        </div>
+    </section>
+
+    <!-- Story Content -->
+    <section class="story-section">
+        <div class="container">
+            <div class="story-content">
+                <div class="story-section">
+                    <h2>The Genesis of FINEX</h2>
+                    <p>FINEX Cybersecurity was born in 2018, sparked by a critical realization: the financial sector was increasingly vulnerable to sophisticated cyber threats, yet existing solutions were often generic and inadequate. Our founders, a group of seasoned cybersecurity experts and financial industry veterans, saw an urgent need for a specialized approach to protect financial institutions. With a shared vision to create an impenetrable defense, FINEX was established to address this gap with unwavering focus and expertise.</p>
+                </div>
+
+                <div class="story-section">
+                    <h2>Building a Fortress</h2>
+                    <p>In our early days, we faced the challenge of proving that a boutique cybersecurity firm could outperform larger, generalized competitors. We invested heavily in assembling a team of elite professionals—ethical hackers, compliance specialists, and threat analysts—who shared our passion for securing the financial world. By 2020, FINEX had developed proprietary methodologies for risk assessment and threat mitigation, earning the trust of our first major clients.</p>
+                </div>
+
+                <div class="story-section">
+                    <h2>Key Milestones</h2>
+                    <div class="milestone-card">
+                        <h3>2019: First Major Client</h3>
+                        <p>Secured our first major contract with a regional bank, implementing a comprehensive cybersecurity framework that reduced vulnerabilities by 85% within six months.</p>
+                    </div>
+                    <div class="milestone-card">
+                        <h3>2021: PCI DSS Certification</h3>
+                        <p>Achieved PCI DSS Qualified Security Assessor (QSA) status, solidifying our expertise in compliance and regulatory standards for the financial industry.</p>
+                    </div>
+                    <div class="milestone-card">
+                        <h3>2023: Global Expansion</h3>
+                        <p>Expanded our services to international markets, protecting financial institutions across three continents with tailored cybersecurity solutions.</p>
+                    </div>
+                </div>
+
+                <div class="story-section">
+                    <h2>Overcoming Challenges</h2>
+                    <p>The cybersecurity landscape is ever-evolving, and FINEX has faced its share of challenges, from adapting to new threat vectors to navigating complex regulatory changes. Each obstacle has strengthened our resolve. For instance, during a major ransomware outbreak in 2022, our incident response team worked around the clock to protect clients, earning industry recognition for our rapid containment and recovery strategies.</p>
+                </div>
+
+                <div class="story-section">
+                    <h2>Our Future</h2>
+                    <p>Today, FINEX stands as a beacon of resilience and innovation in financial cybersecurity. We continue to push boundaries, developing cutting-edge tools and fostering partnerships to stay ahead of cyber adversaries. Our vision remains steadfast: to make financial institutions not just secure, but invincible. As we look to the future, we are committed to expanding our impact, empowering more organizations with the knowledge and defenses needed to thrive in a digital world.</p>
+                </div>
+
+                <div class="cta-section">
+                    <h2>Join Our Journey</h2>
+                    <p>Partner with FINEX Cybersecurity to write the next chapter of secure financial innovation. Together, we can build a future where cyber threats are no match for our defenses.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <ul>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="values.html">Our Values</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="threatintelligence.html">Financial Threat Intelligence</a></li>
+                        <li><a href="compliance.html">Compliance Solutions</a></li>
+                        <li><a href="soc.html">SOC Services</a></li>
+                        <li><a href="trainingprograms.html">Training Programs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="terms&conditions.html">Terms & Conditions</a></li>
+                        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><a href="mailto:info@finex.com">Email: about@finex.com</a></li>
+                        <li><a href="tel:+639123456789">Phone: (+639) 123456789</a></li>
+                        <li>Address: 4434, National Road Nabua, Camarines Sur</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 FINEX Cybersecurity. All Rights Reserved.</p>
+                <p>
+                    <a href="terms&conditions.html">Terms and Conditions</a> |
+                    <a href="privacypolicy.html">Privacy Policy</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

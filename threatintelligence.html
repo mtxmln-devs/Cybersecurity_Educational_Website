@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINEX - Financial Cyber Threats</title>
+    <style>
+        :root {
+            --primary: #0c2461;
+            --secondary: #4a69bd;
+            --accent: #00a8ff;
+            --light: #f5f6fa;
+            --dark: #192a56;
+            --danger: #e74c3c;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f6fa;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin-bottom: 0;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        nav ul li a.active {
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.3rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-column ul li a {
+            color: #dcdde1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .footer-bottom {
+            margin-top: 2rem;
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Financial Threats Page Styles */
+        .cyber-threats {
+            padding: 3rem 0;
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .threats-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .threats-content h2 {
+            color: var(--primary);
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .threats-content h2:first-child {
+            margin-top: 0;
+        }
+        
+        .threats-content h3 {
+            color: var(--secondary);
+            margin: 1.5rem 0 1rem;
+        }
+        
+        .threats-content p {
+            margin-bottom: 1rem;
+        }
+        
+        .threats-content ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .threats-content ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .threat-box {
+            background-color: var(--light);
+            border-left: 4px solid var(--secondary);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .threat-box h3 {
+            color: var(--primary);
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+        
+        .danger-box {
+            background-color: rgba(231, 76, 60, 0.1);
+            border-left: 4px solid var(--danger);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .tips-box {
+            background-color: rgba(39, 174, 96, 0.1);
+            border-left: 4px solid #27ae60;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .quiz-section {
+            background-color: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .quiz-section h3 {
+            margin-top: 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 1rem;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">FINEX</a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="services.html">SERVICES</a></li>
+                        <li><a href="contacts.html">CONTACTS</a></li>
+                        <li><a href="form.html">SIGN OUT</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>FINANCIAL CYBER THREATS</h1>
+            <p>FINEX empowers you with critical knowledge about financial cyber threats, enabling you to make informed decisions and enhance your security posture."</p>
+        </div>
+    </section>
+
+    <!-- Financial Threats Content -->
+    <section class="cyber-threats">
+        <div class="container">
+            <div class="threats-content">
+                <div class="introduction">
+                    <h2>Understanding Financial Cyber Threats</h2>
+                    <p>In today's digital world, money moves online, which also means cybercriminals are targeting financial systems. As students, it's crucial to understand these threats because they affect everyone, from personal banking to global economies.</p>
+                    <p>Imagine your online bank account, or the systems that handle credit card payments. These are all potential targets for cyberattacks. Let's explore how these attacks happen and how we can protect ourselves.</p>
+                    <p>Cybersecurity isn't just for experts! Understanding financial threat intelligence helps you make smarter choices online.</p>
+                </div>
+
+                <div class="threats-section">
+                    <h2>Types of Financial Cyber Threats</h2>
+                    
+                    <div class="threat-box">
+                        <h3>Phishing Scams</h3>
+                        <p>Tricky emails or messages that try to steal your login details or financial information. Think of it like a digital fishing rod trying to catch your personal data.</p>
+                        <ul>
+                            <li>Fake emails claiming to be from your student loan provider</li>
+                            <li>Too-good-to-be-true job offers requiring banking information</li>
+                            <li>Messages pretending to be from your bank asking for account details</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="threat-box">
+                        <h3>Malware and Ransomware</h3>
+                        <p>Sneaky software that can damage your devices or lock your files until you pay a ransom. It's like a digital virus that holds your data hostage.</p>
+                        <ul>
+                            <li>Banking trojans that steal your financial login credentials</li>
+                            <li>Keyloggers that record everything you type, including passwords</li>
+                            <li>Ransomware that encrypts your files and demands payment</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="threat-box">
+                        <h3>Data Breaches</h3>
+                        <p>When hackers steal large amounts of data from companies or organizations, including financial information. This can lead to identity theft.</p>
+                        <ul>
+                            <li>Stolen credit card numbers being sold on the dark web</li>
+                            <li>Personal information used to open fraudulent accounts</li>
+                            <li>Damaged credit scores from unauthorized accounts</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="threat-box">
+                        <h3>ATM Skimming</h3>
+                        <p>Hidden devices placed on ATMs to steal your card information. This is a real-world example of a cyber-physical attack.</p>
+                        <ul>
+                            <li>Fake card readers that capture your card data</li>
+                            <li>Hidden cameras recording your PIN entry</li>
+                            <li>Devices that trap your card inside the machine</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="threat-box">
+                        <h3>Cryptocurrency Scams</h3>
+                        <p>Fraudulent schemes that take advantage of the growing popularity of digital currencies.</p>
+                        <ul>
+                            <li>Fake investment opportunities promising unrealistic returns</li>
+                            <li>Counterfeit crypto exchanges that steal your funds</li>
+                            <li>Ponzi schemes disguised as innovative crypto projects</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="intelligence-section">
+                    <h2>How Threat Intelligence Works</h2>
+                    
+                    <h3>Collecting Clues</h3>
+                    <p>Cybersecurity experts gather information from all over the internet, including the 'dark web' (a hidden part of the internet), to find clues about potential attacks. It's like being a digital detective.</p>
+                    
+                    <h3>Analyzing the Clues</h3>
+                    <p>Experts look for patterns and connections in the data to understand how attacks might happen. They use special tools to analyze malware and track cybercriminals.</p>
+                    
+                    <h3>Sharing the Information</h3>
+                    <p>The information is then shared with financial institutions and other organizations to help them protect their systems. This helps them stay one step ahead of the bad guys.</p>
+                    <p>This shared knowledge creates a stronger defense network, as financial institutions can patch vulnerabilities before they're exploited and implement preventive measures based on emerging threat patterns.</p>
+                </div>
+
+                <div class="importance-section">
+                    <h2>Why Students Should Care</h2>
+                    
+                    <h3>Protecting Your Personal Finances</h3>
+                    <p>Learning about financial cyber threats helps you protect your online bank accounts, credit cards, and other financial information.</p>
+                    
+                    <h3>Building Digital Literacy</h3>
+                    <p>Understanding cybersecurity is an important skill in today's digital world. It can help you make informed decisions online and stay safe.</p>
+                    
+                    <h3>Career Opportunities</h3>
+                    <p>Cybersecurity is a growing field with many job opportunities. Learning about threat intelligence can open doors to exciting careers.</p>
+                    
+                    <h3>Understanding the Bigger Picture</h3>
+                    <p>Cyberattacks can have a significant impact on the economy and society. Understanding these threats helps you become a more informed citizen.</p>
+                </div>
+
+                <div class="tips-section">
+                    <h2>Practical Tips for Students</h2>
+                    
+                    <div class="tips-box">
+                        <h3>Strong Protection Strategies</h3>
+                        <ul>
+                            <li><strong>Use Strong Passwords:</strong> Create unique and complex passwords for your online accounts. Consider using a password manager.</li>
+                            <li><strong>Be Wary of Phishing Emails:</strong> Don't click on links or open attachments from unknown senders. Verify the sender's email address carefully.</li>
+                            <li><strong>Keep Your Software Updated:</strong> Install software updates to patch security vulnerabilities that hackers might exploit.</li>
+                            <li><strong>Use Antivirus Software:</strong> Install and regularly update antivirus software on your devices.</li>
+                            <li><strong>Be Careful on Public Wi-Fi:</strong> Avoid accessing sensitive financial information on public Wi-Fi networks.</li>
+                            <li><strong>Verify Websites:</strong> Check for HTTPS and look for security indicators before entering financial information.</li>
+                        </ul>
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="contacts.html">Contacts</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="threatintelligence.html">Financial Threat Intelligence</a></li>
+                            <li><a href="compliance.html">Compliance Solutions</a></li>
+                            <li><a href="soc.html">SOC Services</a></li>
+                            <li><a href="trainingprograms.html">Training Programs</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="terms&conditions.html">Terms & Conditions</a></li>
+                            <li><a href="privacypolicy.html">Privacy Policy</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Contact Us</h3>
+                        <ul>
+                            <li>Email: threatintelligence@finex.com</li>
+                            <li>Phone: (+639) 123456789 </li>
+                            <li>Address: 4434, National Rd, Nabua, Camarines Sur</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 FINEX Cybersecurity. All Rights Reserved.</p>
+                    <p>
+                        <a href="terms&conditions.html">Terms and Conditions</a> |
+                        <a href="privacypolicy.html">Privacy Policy</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+</body>
+</html>

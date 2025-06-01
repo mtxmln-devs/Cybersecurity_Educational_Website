@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINEX</title>
+    <style>
+        :root {
+            --primary: #0c2461;
+            --secondary: #4a69bd;
+            --accent: #00a8ff;
+            --light: #f5f6fa;
+            --dark: #192a56;
+            --danger: #e74c3c;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f6fa;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin-bottom: 0;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        nav ul li a.active {
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.3rem;
+        }
+        
+        /* Page Content */
+        .page-content {
+            padding: 3rem 0;
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* FAQ Styles */
+        .faq-container {
+            margin-bottom: 3rem;
+        }
+        
+        .faq-category {
+            margin-bottom: 2rem;
+        }
+        
+        .faq-category h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .faq-item {
+            background-color: white;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            background-color: white;
+            color: var(--dark);
+            padding: 1.25rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .faq-question:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+        
+        .faq-item.active .faq-question::after {
+            content: '−';
+        }
+        
+        .faq-answer {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 1.25rem;
+            max-height: 500px;
+            border-top: 1px solid #eee;
+        }
+        
+        .faq-answer p {
+            color: #7f8c8d;
+            font-size: 1.05rem;
+            margin-bottom: 0;
+        }
+        
+        .cta-box {
+            background-color: var(--light);
+            padding: 2rem;
+            text-align: center;
+            border-radius: 8px;
+            margin-top: 3rem;
+        }
+        
+        .cta-box h2 {
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            margin-top: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: #0097e6;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-column ul li a {
+            color: #dcdde1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .footer-bottom {
+            margin-top: 2rem;
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        .faq-answer {
+            display: none;
+        }
+        .faq-question {
+            cursor: pointer;
+            position: relative;
+            padding-right: 20px;
+        }
+        .faq-question::after {
+            content: '+';
+            right: 0;
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }  
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const questions = document.querySelectorAll('.faq-question');
+        questions.forEach(question => {
+            question.addEventListener('click', function() {
+                const faqItem = this.parentElement;
+                faqItem.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">FINEX</a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="about.html" class="active">ABOUT </a></li>
+                        <li><a href="services.html">SERVICES</a></li>
+                        <li><a href="contacts.html">CONTACTS</a></li>
+                        <li><a href="form.html" class="nav-link" data-page="form">SIGN OUT</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Frequently Asked Questions</h1>
+            <p>Explore FINEX's FAQ for rapid clarification on our cybersecurity services.</p>
+        </div>
+    </section>
+
+      <!-- FAQ Content -->
+    <section class="page-content">
+        <div class="container">
+            <div class="faq-container">
+                <div class="faq-category">
+                    <h2>About FinEx Cybersecurity</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What is FinEx Cybersecurity?</div>
+                        <div class="faq-answer">
+                            <p>FinEx Cybersecurity provides cybersecurity solutions and services designed to protect organizations from cyber threats.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Who does FinEx Cybersecurity serve?</div>
+                        <div class="faq-answer">
+                            <p>FinEx serves a wide range of organizations, particularly those in the financial sector, but also businesses across various industries.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What are the main cybersecurity services FinEx offers?</div>
+                        <div class="faq-answer">
+                            <p>FinEx offers services such as vulnerability assessments, penetration testing, security training, incident response, and managed security services.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What are the benefits of using FinEx's services?</div>
+                        <div class="faq-answer">
+                            <p>FinEx provides expert cybersecurity solutions, proactive threat detection, and peace of mind, allowing you to focus on your core business.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How does FinEx stay updated on the latest cyber threats?</div>
+                        <div class="faq-answer">
+                            <p>FinEx employs a team of experts who continuously monitor threat intelligence feeds, conduct research, and participate in industry forums.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-category">
+                    <h2>Services & Solutions</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What is a vulnerability assessment?</div>
+                        <div class="faq-answer">
+                            <p>A vulnerability assessment is a process of identifying and analyzing weaknesses in your systems that could be exploited by attackers.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What is penetration testing?</div>
+                        <div class="faq-answer">
+                            <p>Penetration testing, also known as ethical hacking, involves simulating real-world cyberattacks to identify security flaws.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What are managed security services?</div>
+                        <div class="faq-answer">
+                            <p>Managed security services involve FinEx continuously monitoring and managing your security infrastructure, providing proactive threat detection and response.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What is a SIEM, and how does it help with security?</div>
+                        <div class="faq-answer">
+                            <p>A SIEM (Security Information and Event Management) system collects and analyzes security logs to detect and respond to threats in real-time.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Can FinEx help secure my cloud environment?</div>
+                        <div class="faq-answer">
+                            <p>Yes, FinEx offers cloud security assessments and solutions to protect your data and applications in the cloud.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-category">
+                    <h2>Security Best Practices</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Why is security awareness training important?</div>
+                        <div class="faq-answer">
+                            <p>Security awareness training educates employees about cybersecurity best practices, reducing the risk of human error leading to security breaches.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How often should I conduct a vulnerability assessment?</div>
+                        <div class="faq-answer">
+                            <p>It is recommended to conduct vulnerability assessments regularly, ideally at least annually or after significant system changes.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">What is phishing, and how can FinEx help prevent it?</div>
+                        <div class="faq-answer">
+                            <p>Phishing is a cyberattack that uses deceptive emails or messages to trick users into revealing sensitive information. FinEx provides training and tools to prevent phishing attacks.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How does FinEx handle remote work security?</div>
+                        <div class="faq-answer">
+                            <p>FinEx offers solutions for secure remote access, endpoint protection, and employee training to mitigate risks associated with remote work.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-category">
+                    <h2>Compliance & Data Protection</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">How can FinEx help my business comply with cybersecurity regulations?</div>
+                        <div class="faq-answer">
+                            <p>FinEx provides compliance consulting services to ensure your business meets industry-specific regulations and standards.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>      
+</body>
+</html>                
+                

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINEX</title>
+    <style>
+        :root {
+            --primary: #0c2461;
+            --secondary: #4a69bd;
+            --accent: #00a8ff;
+            --light: #f5f6fa;
+            --dark: #192a56;
+            --danger: #e74c3c;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f6fa;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin-bottom: 0;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        nav ul li a.active {
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.3rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-column ul li a {
+            color: #dcdde1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .footer-bottom {
+            margin-top: 2rem;
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Terms and Conditions Styles */
+        .terms-conditions {
+            padding: 3rem 0;
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .terms-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .terms-content h2 {
+            color: var(--primary);
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .terms-content h2:first-child {
+            margin-top: 0;
+        }
+        
+        .terms-content h3 {
+            color: var(--secondary);
+            margin: 1.5rem 0 1rem;
+        }
+        
+        .terms-content p {
+            margin-bottom: 1rem;
+        }
+        
+        .terms-content ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .terms-content ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .last-updated {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-bottom: 2rem;
+        }
+        
+        .terms-section {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-info {
+            background-color: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        /* Custom styles for cybersecurity tips */
+        .tip-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .tip-item strong {
+            color: var(--secondary);
+        }
+        
+        .dos-section {
+            background-color: rgba(46, 204, 113, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 4px solid #2ecc71;
+        }
+        
+        .donts-section {
+            background-color: rgba(231, 76, 60, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 4px solid #e74c3c;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">FINEX</a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="services.html">SERVICES</a></li>
+                        <li><a href="contacts.html">CONTACTS</a></li>
+                        <li><a href="form.html">SIGN IN</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>CYBERSECURITY DO'S AND DONT'S</h1>
+            <p>FINEX shares simple yet crucial dos and don'ts that can significantly enhance your cybersecurity and protect your digital life.</p>
+        </div>
+    </section>
+
+    <section class="terms-conditions">
+        <div class="container">
+            <div class="terms-content">
+            
+                <div class="terms-section dos-section">
+                    <h2>CYBERSECURITY DO'S</h2>
+                    <div class="tip-item">
+                        <strong>Do use strong and unique passwords</strong> for each of your online accounts to prevent unauthorized access.
+                    </div>
+                    <div class="tip-item">
+                        <strong>Do enable two-factor authentication</strong> wherever possible to add an extra layer of security to your accounts.
+                    </div>
+                    <div class="tip-item">
+                        <strong>Do update your software regularly</strong> to patch security vulnerabilities and protect against potential threats.
+                    </div>
+                    <div class="tip-item">
+                        <strong>Do back up your important files</strong> frequently to avoid data loss in case of a cyberattack.
+                    </div>
+                    <div class="tip-item">
+                        <strong>Do use a reputable antivirus program</strong> to detect and prevent malware from infecting your system.
+                    </div>
+                    <div class="tip-item">
+                        <strong>Do monitor your bank and credit card statements</strong> regularly for unusual or unauthorized transactions.
+                    </div>
+                    <div class="tip-item">
+                        <strong>Do encrypt sensitive data</strong> before transmitting it online to protect it from being intercepted.
+                    </div>
+                    <div class="tip-item">
+                        <strong>Do secure your Wi-Fi network</strong> with a strong password and WPA3 encryption to prevent unauthorized access.
+                    </div>
+                    <div class="tip-item">
+                        <strong>Do educate yourself and others</strong> about phishing schemes and how to recognize suspicious emails or messages.
+                    </div>
+                    <div class="tip-item">
+                        <strong>Do log out of your accounts</strong> when you're done using them, especially on public or shared devices.
+                    </div>
+                </div>
+
+                <div class="terms-section donts-section">
+                    <h2>CYBERSECURITY DONT'S</h2>
+                    <div class="tip-item">
+                        <strong>Don't use the same password</strong> for multiple accounts, as it increases the risk if one account is compromised.
+                    </div>
+                    <div class="tip-item">
+                        <strong>Don't share your passwords</strong> with others, and avoid writing them down in insecure places.
+                    </div>
+                    <div class="tip-item">
+                        <strong>Don't click on suspicious links</strong> or attachments in emails, as they may lead to phishing sites or install malware.
+                    </div>
+                    <div class="tip-item">
+                        <strong>Don't ignore security updates</strong> or software patches, as they are essential for fixing known vulnerabilities.
+                    </div>
+                    <div class="tip-item">
+                        <strong>Don't use public Wi-Fi</strong> for sensitive activities such as banking or logging into important accounts without a VPN.
+                    </div>
+                    <div class="tip-item">
+                        <strong>Don't store passwords in your browser</strong> without using a password manager, as they can be easily accessed if your browser is compromised.
+                    </div>
+                    <div class="tip-item">
+                        <strong>Don't leave your devices unattended</strong> in public places, as they may be targeted for theft or unauthorized access.
+                    </div>
+                    <div class="tip-item">
+                        <strong>Don't connect to unknown or untrusted networks</strong> to avoid exposure to potential cyber threats.
+                    </div>
+                    <div class="tip-item">
+                        <strong>Don't open unsolicited attachments</strong> or links in emails from unknown sources, as they could be a trap.
+                    </div>
+                    <div class="tip-item">
+                        <strong>Don't disable your firewall</strong> or antivirus protection, as they are your first line of defense against threats.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINEX</title>
+    <style>
+        :root {
+            --primary: #0c2461;
+            --secondary: #4a69bd;
+            --accent: #00a8ff;
+            --light: #f5f6fa;
+            --dark: #192a56;
+            --danger: #e74c3c;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f6fa;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin-bottom: 0;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        nav ul li a.active {
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.3rem;
+        }
+        
+        /* Terms and Conditions Styles */
+        .terms-conditions {
+            padding: 3rem 0;
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .terms-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .terms-content h2 {
+            color: var(--primary);
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .terms-content h2:first-child {
+            margin-top: 0;
+        }
+        
+        .terms-content h3 {
+            color: var(--secondary);
+            margin: 1.5rem 0 1rem;
+        }
+        
+        .terms-content p {
+            margin-bottom: 1rem;
+        }
+        
+        .terms-content ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .terms-content ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .last-updated {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-bottom: 2rem;
+        }
+        
+        .terms-section {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-info {
+            background-color: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">FINEX</a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="services.html">SERVICES</a></li>
+                        <li><a href="contacts.html">CONTACTS</a></li>
+                        <li><a href="form.html">SIGN IN</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>CYBERSECURITY FACTS</h1>
+            <p>FINEX reveals essential cybersecurity truths to help you stay safe online.</p>
+        </div>
+    </section>
+
+<section class="terms-conditions">
+    <div class="container">
+        <div class="terms-content">
+
+            <div class="terms-section">
+                <h2>1. The First Computer Virus</h2>
+                <p>The first computer virus, "Creeper," appeared in the early 1970s. It displayed the message "I'M THE CREEPER: CATCH ME IF YOU CAN!"</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>2. Phishing Attacks</h2>
+                <p>Phishing attacks account for a significant portion of cyberattacks. They rely on deception to trick users into revealing sensitive information.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>3. Strong Passwords</h2>
+                <p>A strong password is your first line of defense. It should be long, complex, and unique to each account.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>4. Multi-Factor Authentication (MFA)</h2>
+                <p>Multi-factor authentication (MFA) adds an extra layer of security. It requires multiple forms of verification, like a password and a code from your phone.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>5. Ransomware</h2>
+                <p>Ransomware encrypts your files and demands payment for their release. It can cripple businesses and individuals.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>6. Cybercriminals Target Everyone</h2>
+                <p>Cybercriminals target both individuals and organizations. No one is immune to cyber threats.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>7. Software Updates</h2>
+                <p>Software updates often include critical security patches. Keeping your software up-to-date is essential.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>8. Public Wi-Fi Risks</h2>
+                <p>Public Wi-Fi networks can be risky. Avoid accessing sensitive information on unsecured networks.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>9. Social Engineering</h2>
+                <p>Social engineering manipulates people into giving up confidential information. Be wary of suspicious requests.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>10. Firewalls</h2>
+                <p>Firewalls act as barriers between your network and external threats. They monitor and control network traffic.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>11. Encryption</h2>
+                <p>Encryption scrambles data to make it unreadable without a decryption key. It protects sensitive information during transmission and storage.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>12. Cybersecurity Awareness</h2>
+                <p>Cybersecurity is not just about technology; it's also about human behavior. User awareness is crucial.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>13. Data Breaches</h2>
+                <p>Data breaches can lead to identity theft and financial losses. Protect your personal information.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>14. Internet of Things (IoT) Security</h2>
+                <p>The "Internet of Things" (IoT) introduces new security challenges. Connected devices can be vulnerable to cyberattacks.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>15. Evolving Cyber Threats</h2>
+                <p>Cybercriminals are constantly evolving their tactics. Cybersecurity requires continuous vigilance.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>16. Data Backups</h2>
+                <p>Regularly backing up your data can help you recover from a cyberattack. Store backups in a secure location.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>17. Cybersecurity Laws</h2>
+                <p>Cybersecurity laws and regulations are designed to protect individuals and organizations. Compliance is essential.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>18. The Dark Web</h2>
+                <p>The dark web is a hidden part of the internet often used for illegal activities. It's important to be aware of its risks.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>19. Cybersecurity Professionals</h2>
+                <p>Cybersecurity professionals play a vital role in protecting digital assets. They work to prevent and mitigate cyber threats.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>20. Online Safety</h2>
+                <p>Even seemingly harmless online actions can have security implications. Think before you click, share, or download.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+</body>
+</html>

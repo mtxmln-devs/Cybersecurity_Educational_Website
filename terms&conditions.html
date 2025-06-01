@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINEX</title>
+    <style>
+        :root {
+            --primary: #0c2461;
+            --secondary: #4a69bd;
+            --accent: #00a8ff;
+            --light: #f5f6fa;
+            --dark: #192a56;
+            --danger: #e74c3c;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f6fa;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin-bottom: 0;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        nav ul li a.active {
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.3rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-column ul li a {
+            color: #dcdde1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .footer-bottom {
+            margin-top: 2rem;
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Terms and Conditions Styles */
+        .terms-conditions {
+            padding: 3rem 0;
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .terms-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .terms-content h2 {
+            color: var(--primary);
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .terms-content h2:first-child {
+            margin-top: 0;
+        }
+        
+        .terms-content h3 {
+            color: var(--secondary);
+            margin: 1.5rem 0 1rem;
+        }
+        
+        .terms-content p {
+            margin-bottom: 1rem;
+        }
+        
+        .terms-content ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .terms-content ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .last-updated {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-bottom: 2rem;
+        }
+        
+        .terms-section {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-info {
+            background-color: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">FINEX</a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="services.html">SERVICES</a></li>
+                        <li><a href="contacts.html">CONTACTS</a></li>
+                        <li><a href="form.html">SIGN OUT</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>TERMS AND CONDITIONS</h1>
+            <p>FINEX provides a comprehensive guide to understanding the legal agreements governing the use of FinEx's educational resources, cybersecurity tools, and professional services.</p>
+        </div>
+    </section>
+
+    <!-- Terms and Conditions Content -->
+    <section class="terms-conditions">
+        <div class="container">
+            <div class="terms-content">
+
+                <div class="terms-section">
+                    <h2>1. Service Usage and Acceptable Use</h2>
+                    <p>FinEx Cybersecurity provides cybersecurity services and educational resources. Users agree to utilize these services in compliance with all applicable laws and regulations. Users are prohibited from engaging in any activity that may disrupt, damage, or compromise the integrity of FinEx's systems or the systems of its clients. This includes, but is not limited to, unauthorized access, distribution of malware, or any form of cyberattack. FinEx reserves the right to suspend or terminate services for any user who violates these terms.</p>
+
+                    <h3>Acceptable Use Guidelines:</h3>
+                    <ul>
+                        <li>Use services only for their intended purpose</li>
+                        <li>Comply with all applicable laws and regulations</li>
+                        <li>Respect the privacy and rights of other users</li>
+                        <li>Maintain the security of your account credentials</li>
+                    </ul>
+
+                    <h3>Prohibited Activities:</h3>
+                    <ul>
+                        <li>Unauthorized access to FinEx systems or client systems</li>
+                        <li>Distribution of malware, viruses, or other harmful code</li>
+                        <li>Attempts to bypass security measures or exploit vulnerabilities</li>
+                        <li>Use of services for illegal activities or to harm others</li>
+                        <li>Sharing or distributing access credentials</li>
+                        <li>Excessive use of system resources that may impact other users</li>
+                    </ul>
+                </div>
+
+                <div class="terms-section">
+                    <h2>2. Intellectual Property and Confidentiality</h2>
+                    <p>All content, materials, and intellectual property provided by FinEx Cybersecurity, including but not limited to software, documentation, and training materials, are the exclusive property of FinEx. Users agree not to reproduce, distribute, or modify these materials without explicit written consent. Users shall maintain the confidentiality of any proprietary information or sensitive data shared during the provision of services.</p>
+
+                    <h3>Intellectual Property Rights:</h3>
+                    <ul>
+                        <li>All software, documentation, and training materials are owned by FinEx</li>
+                        <li>Trademarks, logos, and branding elements are protected by law</li>
+                        <li>Users receive a limited license to use materials for intended purposes only</li>
+                        <li>Any feedback or suggestions provided to FinEx become the property of FinEx</li>
+                    </ul>
+
+                    <h3>Confidentiality Obligations:</h3>
+                    <ul>
+                        <li>Users must safeguard any confidential information shared by FinEx</li>
+                        <li>Proprietary techniques, methodologies, and security protocols must be kept confidential</li>
+                        <li>Information about vulnerabilities or security issues discovered must be responsibly disclosed</li>
+                        <li>These obligations continue even after service termination</li>
+                    </ul>
+                </div>
+
+                <div class="terms-section">
+                    <h2>3. Limitation of Liability and Disclaimer</h2>
+                    <p>FinEx Cybersecurity provides services on an "as is" and "as available" basis. FinEx disclaims all warranties, express or implied, including but not limited to warranties of merchantability and fitness for a particular purpose. FinEx shall not be liable for any direct, indirect, incidental, or consequential damages arising from the use or inability to use its services, including but not limited to data loss or business interruption. Users acknowledge that cybersecurity is an evolving field and that FinEx's services do not guarantee absolute security.</p>
+
+                    <h3>Warranty Disclaimer:</h3>
+                    <ul>
+                        <li>Services are provided without warranties of any kind</li>
+                        <li>FinEx does not guarantee that services will be error-free or uninterrupted</li>
+                        <li>FinEx does not warrant that vulnerabilities will be detected or prevented</li>
+                        <li>Results may vary based on system configurations and threat landscapes</li>
+                    </ul>
+
+                    <h3>Limitation of Liability:</h3>
+                    <ul>
+                        <li>FinEx's maximum liability shall not exceed the amount paid for services</li>
+                        <li>FinEx is not liable for any consequential, special, or indirect damages</li>
+                        <li>Users assume responsibility for backing up their data</li>
+                        <li>FinEx is not responsible for third-party services or products</li>
+                    </ul>
+                </div>
+
+                <div class="terms-section">
+                    <h2>4. Payment and Subscription Terms</h2>
+                    <p>Users agree to pay all fees associated with their chosen FinEx Cybersecurity services or subscriptions. Payment terms and billing cycles will be specified at the time of purchase. FinEx reserves the right to modify its pricing and subscription terms with reasonable notice. Failure to pay fees may result in the suspension or termination of services.</p>
+
+                    <h3>Payment Terms:</h3>
+                    <ul>
+                        <li>All fees are due in advance unless otherwise specified</li>
+                        <li>Payment methods accepted include credit cards, wire transfers, and other specified methods</li>
+                        <li>Subscription fees are recurring and will be automatically charged</li>
+                        <li>Users are responsible for maintaining valid payment information</li>
+                    </ul>
+
+                    <h3>Subscription Management:</h3>
+                    <ul>
+                        <li>Subscriptions automatically renew unless cancelled prior to renewal date</li>
+                        <li>Users may upgrade or downgrade their subscriptions subject to applicable terms</li>
+                        <li>Refunds are provided according to the refund policy specified at purchase</li>
+                        <li>Price changes will be notified at least 30 days in advance</li>
+                    </ul>
+                </div>
+
+                <div class="terms-section">
+                    <h2>5. Termination and Modifications</h2>
+                    <p>FinEx Cybersecurity reserves the right to terminate or modify these Terms and Conditions at any time. Users will be notified of any material changes. FinEx may terminate user accounts or suspend services for violations of these terms or for any other reason deemed necessary. Upon termination, users shall cease all use of FinEx's services and materials. Certain sections of this agreement will survive termination, such as those regarding confidentiality and intellectual property.</p>
+
+                    <h3>Termination Rights:</h3>
+                    <ul>
+                        <li>FinEx may terminate services with or without cause</li>
+                        <li>Users may terminate their accounts according to cancellation procedures</li>
+                        <li>No refunds will be provided for termination due to violations of these terms</li>
+                        <li>FinEx may suspend services temporarily during investigation of suspected violations</li>
+                    </ul>
+
+                    <h3>Modifications to Terms:</h3>
+                    <ul>
+                        <li>FinEx will notify users of material changes to these terms</li>
+                        <li>Continued use of services after changes constitutes acceptance of new terms</li>
+                        <li>Users disagreeing with changes may terminate their accounts</li>
+                        <li>Special terms for enterprise clients may be negotiated separately</li>
+                    </ul>
+
+                    <h3>Survival Clauses:</h3>
+                    <ul>
+                        <li>Intellectual property provisions survive termination</li>
+                        <li>Confidentiality obligations remain in effect</li>
+                        <li>Limitation of liability provisions continue to apply</li>
+                        <li>Payment obligations for services rendered remain due</li>
+                    </ul>
+                </div>
+
+                <div class="contact-info">
+                    <h3>Contact Information:</h3>
+                    <p>If you have any questions about these Terms and Conditions, please contact us at:</p>
+                    <ul>
+                        <li><strong>Email:</strong> terms@finex.com</li>
+                        <li><strong>Phone:</strong> (+639) 123456789</li>
+                        <li><strong>Address:</strong> 4434, National Road Nabua, Camarines Sur</li>
+                    </ul>
+                </div>
+
+                <br><p>By using our services, you demonstrate your understanding and acceptance of these Terms and Conditions. </p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

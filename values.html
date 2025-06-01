@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINEX </title>
+    <style>
+        :root {
+            --primary: #0c2461;
+            --secondary: #4a69bd;
+            --accent: #00a8ff;
+            --light: #f5f6fa;
+            --dark: #192a56;
+            --danger: #e74c3c;
+        }
+        body::-webkit-scrollbar{
+            display: hidden;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f6fa;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        body::-webkit-scrollbar{
+            display: none;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 5px 15px rgba(12, 36, 97, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.1em;
+        }
+        
+        .logo span {
+            color: var(--accent);
+            margin-left: 0.2em;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin-bottom: 0;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+            letter-spacing: 0.05em;
+            font-size: 0.95rem;
+            border-bottom: 3px solid transparent;
+            display: inline-block;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 0.2rem;
+        }
+        
+        nav ul li a.active {
+            color: var(--accent);
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 0.2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-column ul li a {
+            color: #dcdde1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .footer-bottom {
+            margin-top: 2rem;
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Values Styles */
+        .values-section {
+            padding: 3rem 0;
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .values-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .values-content h2 {
+            color: var(--primary);
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .values-content h2:first-child {
+            margin-top: 0;
+        }
+        
+        .values-content p {
+            margin-bottom: 1rem;
+        }
+        
+        .values-section p {
+            margin-left: 10px;
+        }
+        
+        .value-card {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .value-card h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section {
+            background-color: var(--accent);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .cta-section h2 {
+            color: white;
+            border-bottom: none;
+            margin-top: 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">FINEX</a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="services.html">SERVICES</a></li>
+                        <li><a href="contacts.html">CONTACTS</a></li>
+                        <li><a href="form.html" class="nav-link" data-page="form">SIGN OUT</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>OUR VALUES</h1>
+            <p>At FINEX Cybersecurity, our core values are the foundation of everything we do, guiding our mission to protect the financial sector with integrity and innovation.</p>
+        </div>
+    </section>
+
+    <!-- Values Content -->
+    <section class="values-section">
+        <div class="container">
+            <div class="values-content">
+                <div class="values-section">
+                    <h2>Our Guiding Principles</h2>
+                    <p>FINEX Cybersecurity is built on a set of core values that define our approach to safeguarding financial institutions. These values are not just words—they are the pillars of our conviction, shaping every decision, strategy, and interaction. They drive us to deliver unparalleled security solutions tailored to the unique challenges of the financial sector.</p>
+                </div>
+
+                <div class="values-section">
+                    <h2>Our Core Values</h2>
+                    <div class="value-card">
+                        <h3>Uncompromising Integrity</h3>
+                        <p>Integrity is the bedrock of our operations. We operate with absolute transparency, ensuring that every action we take is guided by ethical standards. Trust is not just earned—it’s our foundation, fostering confidence in our clients and partners.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <h3>Relentless Expertise</h3>
+                        <p>We reject mediocrity. Our team relentlessly pursues mastery in the ever-evolving field of cybersecurity, staying ahead of threats with cutting-edge knowledge and skills. This commitment ensures our clients receive the highest level of protection.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <h3>Client-Centric Dedication</h3>
+                        <p>Your security is our obsession. We don’t provide one-size-fits-all solutions; instead, we craft customized strategies that address your specific needs and challenges, ensuring your defenses are as unique as your organization.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <h3>Unleashed Innovation</h3>
+                        <p>We are pioneers in the cybersecurity landscape. By embracing and developing cutting-edge technologies and methodologies, we stay one step ahead of adversaries, delivering innovative solutions that redefine financial security.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <h3>Unbreakable Collaboration</h3>
+                        <p>Partnership is at the heart of our success. We work hand-in-hand with our clients, fostering a collaborative environment where shared goals lead to robust security outcomes. Together, we build stronger defenses.</p>
+                    </div>
+                </div>
+
+                <div class="values-section">
+                    <h2>Living Our Values</h2>
+                    <p>Our values are not just ideals—they are woven into every aspect of our work. From the way we conduct risk assessments to how we respond to incidents, these principles guide our actions. For example, our commitment to integrity ensures full transparency in our compliance reporting, while our relentless expertise drives us to continuously update our threat intelligence methodologies. This dedication has earned us accolades, including our PCI DSS Qualified Security Assessor (QSA) status, and the trust of financial institutions worldwide.</p>
+                </div>
+
+                <div class="cta-section">
+                    <h2>Partner with Our Values</h2>
+                    <p>Join FINEX Cybersecurity and experience a partnership grounded in integrity, expertise, and innovation. Let our values guide your journey to unbreakable security.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <ul>
+                        <li><a href="story.html">Our Story</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="threatintelligence.html">Financial Threat Intelligence</a></li>
+                        <li><a href="compliance.html">Compliance Solutions</a></li>
+                        <li><a href="soc.html">SOC Services</a></li>
+                        <li><a href="trainingprograms.html">Training Programs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="terms&conditions.html">Terms & Conditions</a></li>
+                        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><a href="mailto:info@finex.com">Email: about@finex.com</a></li>
+                        <li><a href="tel:+639123456789">Phone: (+639) 123456789</a></li>
+                        <li>Address: 4434, National Road Nabua, Camarines Sur</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 FINEX Cybersecurity. All Rights Reserved.</p>
+                <p>
+                    <a href="terms&conditions.html">Terms and Conditions</a> |
+                    <a href="privacypolicy.html">Privacy Policy</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

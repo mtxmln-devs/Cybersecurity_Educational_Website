@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINEX</title>
+    <style>
+        :root {
+            --primary: #0c2461;
+            --secondary: #4a69bd;
+            --accent: #00a8ff;
+            --light: #f5f6fa;
+            --dark: #192a56;
+            --danger: #e74c3c;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f6fa;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin-bottom: 0;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        nav ul li a.active {
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.3rem;
+        }
+        
+        /* Terms and Conditions Styles */
+        .terms-conditions {
+            padding: 3rem 0;
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .terms-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .terms-content h2 {
+            color: var(--primary);
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .terms-content h2:first-child {
+            margin-top: 0;
+        }
+        
+        .terms-content h3 {
+            color: var(--secondary);
+            margin: 1.5rem 0 1rem;
+        }
+        
+        .terms-content p {
+            margin-bottom: 1rem;
+        }
+        
+        .terms-content ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .terms-content ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .last-updated {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-bottom: 2rem;
+        }
+        
+        .terms-section {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-info {
+            background-color: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">FINEX</a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="services.html">SERVICES</a></li>
+                        <li><a href="contacts.html">CONTACTS</a></li>
+                        <li><a href="form.html">SIGN IN</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>CYBERSECURITY TIPS</h1>
+            <p>FINEX emphasizes the importance of cybersecurity by providing essential tips to safeguard personal data against evolving digital threats.</p>
+        </div>
+    </section>
+
+<section class="terms-conditions">
+    <div class="container">
+        <div class="terms-content">
+
+            <div class="terms-section">
+                <h2>1. Use strong, unique passwords: </h2>
+                <p>Employ a password manager to generate and store complex passwords for each account.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>2. Enable multi-factor authentication (MFA): </h2>
+                <p>Add an extra layer of security beyond just a password.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>3. Keep software updated: </h2>
+                <p>Regularly update operating systems, applications, and browsers to patch vulnerabilities.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>4. Be cautious of phishing emails:</h2>
+                <p>Verify senders, avoid clicking suspicious links, and don't provide sensitive information via email.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>5. Use a reputable antivirus and anti-malware solution: </h2>
+                <p>Regularly scan your devices for threats.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>6. Back up your data regularly: </h2>
+                <p>Store backups offline or in a secure cloud location.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>7. Software Updates</h2>
+                <p>Software updates often include critical security patches. Keeping your software up-to-date is essential.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>8. Secure your Wi-Fi network: </h2>
+                <p>Use a strong password and enable WPA3 encryption.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>9. Be wary of public Wi-Fi: </h2>
+                <p>Avoid accessing sensitive information on unsecured public networks. </p>
+            </div>
+
+            <div class="terms-section">
+                <h2>10. Limit social media sharing: </h2>
+                <p>Be mindful of the information you share online, as it can be used for social engineering.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>11. Use a VPN (Virtual Private Network): </h2>
+                <p>Encrypt your internet traffic, especially on public Wi-Fi.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>12. Be cautious of downloads: </h2>
+                <p>Only download software from trusted sources.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>13. Enable a firewall: </h2>
+                <p>Protect your network from unauthorized access.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>14. Educate yourself and others: </h2>
+                <p> Stay informed about the latest cybersecurity threats and best practices.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>15. Review app permissions:</h2>
+                <p> Limit the permissions granted to mobile apps.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>16. Secure your IoT devices:</h2>
+                <p> Change default passwords and keep firmware updated.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>17. Shred sensitive documents: </h2>
+                <p>Don't just throw away documents containing personal information.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>18.Use encryption: </h2>
+                <p>Encrypt sensitive files and emails.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>19. Monitor your accounts: </h2>
+                <p>Regularly check bank statements and credit reports for suspicious activity. </p>
+            </div>
+
+            <div class="terms-section">
+                <h2>20. Be skeptical of unsolicited calls or messages: </h2>
+                <p>Verify the legitimacy of any requests for personal information.</p>
+            </div>
+
+
+     
+    </div>
+</section>
+</body>
+</html>

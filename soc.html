@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINEX - Secure Transactions</title>
+    <style>
+        :root {
+            --primary: #0c2461;
+            --secondary: #4a69bd;
+            --accent: #00a8ff;
+            --light: #f5f6fa;
+            --dark: #192a56;
+            --danger: #e74c3c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f6fa;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin-bottom: 0;
+        }
+
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        nav ul li a.active {
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.3rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column ul li a {
+            color: #dcdde1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            margin-top: 2rem;
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Secure Transactions Page Styles */
+        .secure-transactions {
+            padding: 3rem 0;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .transactions-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .transactions-content h2 {
+            color: var(--primary);
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .transactions-content h2:first-child {
+            margin-top: 0;
+        }
+
+        .transactions-content h3 {
+            color: var(--secondary);
+            margin: 1.5rem 0 1rem;
+        }
+
+        .transactions-content p {
+            margin-bottom: 1rem;
+        }
+
+        .transactions-content ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .transactions-content ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">FINEX</a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="services.html">SERVICES</a></li>
+                        <li><a href="contacts.html">CONTACTS</a></li>
+                        <li><a href="form.html">SIGN OUT</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>SOC SERVICES</h1>
+            <p>FINEX delivers continuous SOC services, ensuring real-time threat detection and mitigation to keep your digital assets secure</p>
+        </div>
+    </section>
+
+    <section class="secure-transactions">
+        <div class="container">
+            <div class="transactions-content">
+                <div class="introduction">
+                    <h2>Securing Your Digital Assets</h2>
+                    <p>At FINEX, we understand the importance of safeguarding your financial transactions. We employ robust security measures to ensure that your sensitive information remains protected throughout the entire process.</p>
+                    <p>Our goal is to build trust by showcasing our commitment to security and clearly explaining how each feature contributes to a safer transaction environment.</p>
+                </div>
+
+                <div class="features-section">
+                    <h2>Key Security Features</h2>
+
+                    <h3>End-to-End Encryption</h3>
+                    <p>All transaction data is encrypted from the moment it leaves your device until it reaches our secure servers. This means your information is protected from interception, ensuring its confidentiality.</p>
+
+                    <h3>Multi-Factor Authentication (MFA)</h3>
+                    <p>We implement robust MFA, requiring multiple forms of verification (e.g., passwords, codes, biometrics) before completing a transaction. This adds an extra layer of security and prevents unauthorized access.</p>
+
+                    <h3>Real-Time Fraud Detection</h3>
+                    <p>Our AI-powered systems monitor transactions in real-time, flagging and blocking suspicious activities. This ensures that potential fraud is quickly addressed, protecting your finances.</p>
+
+                    <h3>Tokenization</h3>
+                    <p>Sensitive data, such as credit card numbers, is replaced with unique tokens. This protects your actual data from being exposed, adding an extra layer of security during transactions.</p>
+
+                    <h3>Secure Payment Gateways</h3>
+                     <p>We utilize PCI DSS compliant payment gateways, adhering to the highest industry standards for secure online transactions. You can trust that your transactions are processed through trusted and secure gateways.</p>
+
+                     <h3>Transaction Logging and Auditing</h3>
+                    <p>All transactions are meticulously logged and auditable, providing a clear record of every action. This accountability allows for thorough investigations in case of disputes or security incidents, ensuring transparency and security.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+     <!-- Footer -->
+     <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contacts.html">Contacts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="threatintelligence.html">Financial Threat Intelligence</a></li>
+                        <li><a href="compliance.html">Compliance Solutions</a></li>
+                        <li><a href="soc.html">SOC Services</a></li>
+                        <li><a href="trainingprograms.html">Training Programs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="terms&conditions.html">Terms & Conditions</a></li>
+                        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>Email: soc@finex.com</li>
+                        <li>Phone: (+639) 123456789 </li>
+                        <li>Address: 4434, National Rd, Nabua, Camarines Sur</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FINEX Cybersecurity. All Rights Reserved.</p>
+                <p>
+                    <a href="terms&conditions.html">Terms and Conditions</a> |
+                    <a href="privacypolicy.html">Privacy Policy</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</body>
+</html>

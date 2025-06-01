@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINEX</title>
+    <style>
+        :root {
+            --primary: #0c2461;
+            --secondary: #4a69bd;
+            --accent: #00a8ff;
+            --light: #f5f6fa;
+            --dark: #192a56;
+            --danger: #e74c3c;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: var(--light);
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+        .logo span {
+            color: var(--accent);
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .content {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+        .content h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .content ul {
+            margin-left: 2rem;
+        }
+                /* Header Styles */
+                header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin-bottom: 0;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+        
+        /* Added active class for highlighting the current page */
+        nav ul li a.active {
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.3rem;
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-column ul li a {
+            color: #dcdde1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .footer-bottom {
+            margin-top: 2rem;
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">FINEX</a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="index.html">ABOUT</a></li>
+                        <li><a href="services.html">SERVICES</a></li>
+                        <li><a href="contacts.html">CONTACT</a></li>
+                        <li><a href="index.html">SIGN OUT</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+      <!-- Page Header -->
+      <section class="page-header">
+        <div class="container">
+            <h1>COMPLIANCE SOLUTIONS</h1>
+            <p>FINEX provides comprehensive compliance solutions, helping your organization navigate complex regulatory landscapes and maintain adherence to industry standards.</p>
+        </div>
+    </section>
+
+
+    <div class="container">
+        <section class="content">
+            <h2>Understanding the Regulatory Landscape</h2>
+            <p>Financial cybersecurity regulations ensure the protection of sensitive data and financial stability worldwide.</p>
+            <h3>Key Regulatory Standards</h3>
+            <ul>
+                <li><b>PCI DSS:</b> Protects credit card data with strict security measures.</li>
+                <li><b>GDPR:</b> Ensures data privacy for EU citizens globally.</li>
+                <li><b>GLBA:</b> Protects consumers' financial information.</li>
+                <li><b>CCPA:</b> California Consumer Privacy Act enhances consumer rights.</li>
+                <li><b>SOX:</b> Sarbanes-Oxley Act enforces financial transparency.</li>
+            </ul>
+            <h3>Regulatory Updates and Changes</h3>
+            <p>Stay informed about evolving regulations with reliable tracking resources.</p>
+        </section>
+        <section class="content">
+            <h2>Achieving and Maintaining Compliance</h2>
+            <h3>Compliance Assessment</h3>
+            <p>Conduct assessments, identify gaps, and develop a compliance roadmap.</p>
+            <h3>Security Controls</h3>
+            <p>Implement encryption, access control, and vulnerability management strategies.</p>
+            <h3>Audit Readiness</h3>
+            <p>Prepare for audits, maintain documentation, and respond to findings.</p>
+            <h3>Training and Awareness</h3>
+            <p>Ensure employees are trained on compliance policies and best practices.</p>
+        </section>
+        <section class="content">
+            <h2>FinEx's Role in Compliance</h2>
+            <h3>Consulting Services</h3>
+            <p>FinEx provides tailored compliance solutions and expert guidance.</p>
+            <h3>Audit Support</h3>
+            <p>We assist in audit preparation and remediation of findings.</p>
+            <h3>Ongoing Monitoring</h3>
+            <p>FinEx ensures continuous compliance tracking and assessments.</p>
+            <h3>Incident Response</h3>
+            <p>Immediate response and mitigation strategies for security breaches.</p>
+        </section>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contacts.html">Contacts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="threatintelligence.html">Financial Threat Intelligence</a></li>
+                        <li><a href="compliance.html">Compliance Solutions</a></li>
+                        <li><a href="soc.html">SOC Services</a></li>
+                        <li><a href="trainingprograms.html">Training Programs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="terms&conditions.html">Terms & Conditions</a></li>
+                        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><a href="mailto:info@finex.com">Email: compliance@finex.com</a></li>
+                        <li><a href="tel:+639123456789">Phone: (+639) 123456789</a></li>
+                        <li>Address: 4434, National Road Nabua, Camarines Sur</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FINEX. All Rights Reserved.</p>
+                <p>
+                    <a href="terms&conditions.html">Terms and Conditions</a> |
+                    <a href="privacypolicy.html">Privacy Policy</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINEX</title>
+    <style>
+        :root {
+            --primary: #0c2461;
+            --secondary: #4a69bd;
+            --accent: #00a8ff;
+            --light: #f5f6fa;
+            --dark: #192a56;
+            --danger: #e74c3c;
+        }
+        body::-webkit-scrollbar{
+            display: hidden;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f6fa;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        body::-webkit-scrollbar{
+            display: none;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 5px 15px rgba(12, 36, 97, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.1em;
+        }
+        
+        .logo span {
+            color: var(--accent);
+            margin-left: 0.2em;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin-bottom: 0;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+            letter-spacing: 0.05em;
+            font-size: 0.95rem;
+            border-bottom: 3px solid transparent;
+            display: inline-block;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 0.2rem;
+        }
+        
+        /* Added active class for highlighting the current page */
+        nav ul li a.active {
+            color: var(--accent);
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 0.2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-column ul li a {
+            color: #dcdde1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .footer-bottom {
+            margin-top: 2rem;
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* About Us Styles */
+        .about-us {
+            padding: 3rem 0;
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .about-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-content h2 {
+            color: var(--primary);
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .about-content h2:first-child {
+            margin-top: 0;
+        }
+        
+        .about-content p {
+            margin-bottom: 1rem;
+        }
+        
+        .about-content ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-content ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .about-section {
+            margin-bottom: 2rem;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .team-member {
+            background-color: var(--light);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+        
+        .team-member-info {
+            padding: 1.5rem;
+        }
+        
+        .team-member h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-member p {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+        
+        .value-card {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .value-card h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section {
+            background-color: var(--accent);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .container p{
+            font-size: 18px;
+            margin-left: 50px;
+        }
+        .about-section p{
+            margin-left: 10px;
+        }
+        
+        .cta-section h2 {
+            color: white;
+            border-bottom: none;
+            margin-top: 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem;
+            }
+            
+            .team-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">FINEX</a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="about.html" class="active">ABOUT</a></li>
+                        <li><a href="services.html">SERVICES</a></li>
+                        <li><a href="contacts.html">CONTACTS</a></li>
+                        <li><a href="form.html" class="nav-link" data-page="form">SIGN OUT</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>ABOUT US</h1>
+            <p>FINEX provides a holistic cybersecurity approach, deploying expert-led risk assessments, developing meticulously crafted security policies, and implementing persistent security monitoring, all aimed at safeguarding the financial sector against the dynamic and multifaceted landscape of cyber risks.</p>
+        </div>
+    </section>
+
+    <!-- About Us Content -->
+    <section class="about-us">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-section">
+                    <p>In the turbulent landscape of digital threats, financial institutions cannot afford to gamble with their security. FinEx Cybersecurity was forged from the absolute necessity to provide <em>specialized</em>, <em>uncompromising</em> protection against the relentless cyber onslaught. We don't just offer services; we deliver a fortified defense, tailored to the unique vulnerabilities and complexities that define the financial sector.</p>
+                </div>
+
+                <div class="about-section">
+                    <h2>Our Mission: To Defend, Empower, and Secure</h2>
+                    <p>We are driven by a singular purpose: to arm financial organizations of all sizes with the <em>unquestionable</em> knowledge, <em>cutting-edge</em> tools, and <em>unyielding</em> expertise required to build impenetrable cybersecurity fortresses. We don't just react; we anticipate, we strategize, we <em>dominate</em> the threat landscape.</p>
+                </div>
+
+                <div class="about-section">
+                    <h2>Our Core Values: The Pillars of Our Conviction</h2>
+                    
+                    <div class="value-card">
+                        <h3>Uncompromising Integrity</h3>
+                        <p>We operate with absolute transparency and unwavering ethical standards. Trust is not a privilege; it's our foundation.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <h3>Relentless Expertise</h3>
+                        <p>We are not satisfied with mediocrity. We relentlessly pursue mastery in the ever-evolving realm of cybersecurity, ensuring our clients receive nothing less than the best.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <h3>Client-Centric Dedication</h3>
+                        <p>Your security is our obsession. We don't offer generic solutions; we forge customized strategies, tailored to your specific needs and challenges.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <h3>Unleashed Innovation</h3>
+                        <p>We are pioneers, not followers. We embrace and develop cutting-edge technologies and methodologies to stay ahead of the adversary.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <h3>Unbreakable Collaboration</h3>
+                        <p>We believe in the power of partnership. We work hand-in-hand with our clients, fostering a collaborative environment to achieve shared security goals.</p>
+                    </div>
+                </div>
+
+                <div class="about-section">
+                    <h2>Our Team: The Vanguard of Financial Cybersecurity</h2>
+                    <p>FinEx is not just a company; it's a force. Our team consists of elite cybersecurity professionals, including certified analysts, penetration testers, and compliance specialists, each a master of their domain. Our leadership, seasoned veterans of the financial sector, provides strategic vision and unwavering guidance. We are not just employees; we are the guardians of your digital assets.</p>
+                    
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <div class="team-member-info">
+                                <h3>Security Analysis Team</h3>
+                                <p>Our certified security analysts continuously monitor and assess potential threats to your systems, implementing proactive measures to mitigate risks before they materialize.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="team-member">
+                            <div class="team-member-info">
+                                <h3>Penetration Testing Experts</h3>
+                                <p>Our ethical hackers simulate real-world attacks on your systems, identifying vulnerabilities and strengthening your defenses against potential breaches.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="team-member">
+                            <div class="team-member-info">
+                                <h3>Compliance Specialists</h3>
+                                <p>Our regulatory experts ensure your cybersecurity measures align with industry standards and legal requirements, helping you navigate the complex landscape of compliance.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="team-member">
+                            <div class="team-member-info">
+                                <h3>Incident Response Team</h3>
+                                <p>When incidents occur, our rapid response team mobilizes immediately, containing threats and minimizing damage with precision and efficiency.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-section">
+                    <h2>Our Culture: A Crucible of Excellence</h2>
+                    <p>We cultivate a culture of relentless pursuit of excellence, continuous innovation, and unwavering dedication. We are driven by a shared passion for cybersecurity and a burning desire to make a tangible difference in the security of the financial industry.</p>
+                </div>
+
+                <div class="about-section">
+                    <h2>Our Vision: To Dominate the Future of Financial Cybersecurity</h2>
+                    <p>We are not content with being just another cybersecurity provider. We aspire to be the undisputed leader, the benchmark for excellence, the <em>indispensable</em> partner for financial institutions worldwide. We envision a future where financial organizations are not just protected, but <em>invincible</em> against cyber threats.</p>
+                </div>
+
+                <div class="about-section">
+                    <h2>Our Proven Track Record: Evidence of Our Dominance</h2>
+                    <p>FinEx boasts an unparalleled record of success, including our certified PCI DSS Qualified Security Assessor (QSA) status and numerous accolades for our exceptional incident response capabilities. We have consistently delivered tangible results, helping financial institutions achieve and maintain regulatory compliance, and thwarting countless cyberattacks.</p>
+                </div>
+
+                <div class="cta-section">
+                    <h2>Choose FinEx Cybersecurity. Choose Unwavering Security.</h2>
+                        <p>Partner with us today and experience the difference that relentless dedication to your security can make.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <h3>About Us</h3>
+                        <ul>
+                            <li><a href="story.html">Our Story</a></li>
+                            <li><a href="team.html">Our Team</a></li>
+                            <li><a href="values.html">Our Values</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="threatintelligence.html">Financial Threat Intelligence</a></li>
+                            <li><a href="compliance.html">Compliance Solutions</a></li>
+                            <li><a href="soc.html">SOC Services</a></li>
+                            <li><a href="trainingprograms.html">Training Programs</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="terms&conditions.html">Terms & Conditions</a></li>
+                            <li><a href="privacypolicy.html">Privacy Policy</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Contact Us</h3>
+                        <ul>
+                            <li><a href="mailto:info@finex.com">Email: about@finex.com</a></li>
+                            <li><a href="tel:+639123456789">Phone: (+639) 123456789</a></li>
+                            <li>Address: 4434, National Road Nabua, Camarines Sur</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 FINEX Cybersecurity. All Rights Reserved.</p>
+                    <p>
+                        <a href="terms&conditions.html">Terms and Conditions</a> |
+                        <a href="privacypolicy.html">Privacy Policy</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+</body>
+</html>

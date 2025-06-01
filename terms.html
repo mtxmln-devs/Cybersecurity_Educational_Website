@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINEX</title>
+    <style>
+        :root {
+            --primary: #0c2461;
+            --secondary: #4a69bd;
+            --accent: #00a8ff;
+            --light: #f5f6fa;
+            --dark: #192a56;
+            --danger: #e74c3c;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f6fa;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin-bottom: 0;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        nav ul li a.active {
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.3rem;
+        }
+        
+        /* Terms and Conditions Styles */
+        .terms-conditions {
+            padding: 3rem 0;
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .terms-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .terms-content h2 {
+            color: var(--primary);
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .terms-content h2:first-child {
+            margin-top: 0;
+        }
+        
+        .terms-content h3 {
+            color: var(--secondary);
+            margin: 1.5rem 0 1rem;
+        }
+        
+        .terms-content p {
+            margin-bottom: 1rem;
+        }
+        
+        .terms-content ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .terms-content ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .last-updated {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-bottom: 2rem;
+        }
+        
+        .terms-section {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-info {
+            background-color: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">FINEX</a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="services.html">SERVICES</a></li>
+                        <li><a href="contacts.html">CONTACTS</a></li>
+                        <li><a href="form.html">SIGN IN</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>CYBERSECURITY TERMINOLOGIES</h1>
+            <p>FINEX provides an understanding of key cybersecurity terms that help you navigate and protect your digital environment.</p>
+        </div>
+    </section>
+
+<section class="terms-conditions">
+    <div class="container">
+        <div class="terms-content">
+
+            <div class="terms-section">
+                <h2>1. Phishing</h2>
+                <p>Phishing is a cyberattack where attackers impersonate legitimate organizations or individuals to steal sensitive information, often through fraudulent emails or websites.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>2. Ransomware </h2>
+                <p>Ransomware is a type of malicious software that encrypts a victim's data and demands payment for its decryption, often causing significant disruption to businesses and individuals.  </p>
+            </div>
+
+            <div class="terms-section">
+                <h2>3. Malware</h2>
+                <p>Malware refers to any malicious software, including viruses, worms, and trojans, designed to harm, exploit, or otherwise compromise a computer system's functionality and security. </p>
+            </div>
+
+            <div class="terms-section">
+                <h2>4. Firewall </h2>
+                <p>A firewall is a network security system designed to monitor and control incoming and outgoing network traffic, establishing a barrier between trusted internal networks and untrusted external networks.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>5. Two-Factor Authentication (2FA)</h2>
+                <p>Two-factor authentication adds an extra layer of security by requiring users to provide two forms of identification, typically a password and a unique code sent to their phone. </p>
+            </div>
+
+            <div class="terms-section">
+                <h2>6. Encryption</h2>
+                <p>Encryption is the process of converting data into a coded format to prevent unauthorized access, ensuring that only authorized parties can read the information.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>7. Spyware</h2>
+                <p>Spyware is malicious software designed to secretly monitor and collect information about a user’s activities, often without their knowledge or consent.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>8. Zero-Day Attack</h2>
+                <p>A zero-day attack targets a previously unknown vulnerability in software or hardware, taking advantage of security flaws before they are patched by the manufacturer.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>9. DDoS Attack (Distributed Denial-of-Service)</h2>
+                <p>A DDoS attack involves overwhelming a target system, such as a website or server, with a massive amount of traffic, rendering it inaccessible to legitimate users.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>10. Social Engineering</h2>
+                <p>Social engineering is the manipulation of individuals into divulging confidential information by exploiting human psychology rather than using technical hacking methods.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>11. Botnet</h2>
+                <p>A botnet is a network of infected computers or devices controlled by a hacker, often used to carry out large-scale cyberattacks, such as DDoS attacks or data theft.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>12. Vulnerability</h2>
+                <p>A vulnerability refers to a weakness or flaw in a system or software that can be exploited by cybercriminals to gain unauthorized access or cause damage.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>13. Antivirus Software</h2>
+                <p>Antivirus software is designed to detect, prevent, and remove malware from computer systems, protecting against a wide range of cyber threats, including viruses, worms, and trojans.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>14. Patch Management</h2>
+                <p>Patch management is the process of identifying, testing, and applying software updates to fix vulnerabilities, enhance performance, and ensure security within an organization’s systems.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>15. Endpoint Security</h2>
+                <p>Endpoint security involves protecting individual devices, such as computers, smartphones, and tablets, from cyber threats, ensuring that each device is secure against potential vulnerabilities.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>16. Intrusion Detection System (IDS)</h2>
+                <p>An intrusion detection system is a security tool that monitors network traffic for suspicious activities, identifying and alerting administrators to potential intrusions or breaches.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>17.Encryption Key</h2>
+                <p>An encryption key is a string of characters used in encryption algorithms to encrypt or decrypt data, ensuring that sensitive information remains protected from unauthorized access.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>18. Advanced Persistent Threat (APT)</h2>
+                <p>An advanced persistent threat is a prolonged and targeted cyberattack in which hackers gain unauthorized access to a system and remain undetected for an extended period to steal sensitive data.</p>
+            </div>
+
+            <div class="terms-section">
+                <h2>19. Privilege Escalation</h2>
+                <p>Privilege escalation occurs when a user or attacker gains higher-level access or permissions within a system, often exploiting vulnerabilities to perform unauthorized actions or access restricted data.                </p>
+            </div>
+
+            <div class="terms-section">
+                <h2>20. Security Information and Event Management (SIEM)                </h2>
+                <p>SIEM is a security solution that collects and analyzes security data from various sources to detect, respond to, and prevent potential cybersecurity threats in real time.                </p>
+            </div>
+
+     
+    </div>
+</section>
+</body>
+</html>

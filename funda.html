@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINEX</title>
+    <style>
+        :root {
+            --primary: #0c2461;
+            --secondary: #4a69bd;
+            --accent: #00a8ff;
+            --light: #f5f6fa;
+            --dark: #192a56;
+            --danger: #e74c3c;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f6fa;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin-bottom: 0;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        nav ul li a.active {
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.3rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-column ul li a {
+            color: #dcdde1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .footer-bottom {
+            margin-top: 2rem;
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Terms and Conditions Styles */
+        .terms-conditions {
+            padding: 3rem 0;
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .terms-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .terms-content h2 {
+            color: var(--primary);
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .terms-content h2:first-child {
+            margin-top: 0;
+        }
+        
+        .terms-content h3 {
+            color: var(--secondary);
+            margin: 1.5rem 0 1rem;
+        }
+        
+        .terms-content p {
+            margin-bottom: 1rem;
+        }
+        
+        .terms-content ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .terms-content ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .last-updated {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-bottom: 2rem;
+        }
+        
+        .terms-section {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-info {
+            background-color: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        /* Custom styles for cybersecurity importance */
+        .importance-item {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .importance-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .importance-item h3 {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+        
+        .importance-item-number {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 50%;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .importance-intro {
+            background-color: rgba(12, 36, 97, 0.05);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">FINEX</a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="services.html">SERVICES</a></li>
+                        <li><a href="contacts.html">CONTACTS</a></li>
+                        <li><a href="form.html">SIGN IN</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>CYBERSECURITY FUNDAMENTALS</h1>
+            <p>FINEX outlines the essential fundamentals of cybersecurity, emphasizing the importance of securing personal data and implementing preventive measures to protect against cyber threats.</p>
+        </div>
+    </section>
+
+    <section class="terms-conditions">
+        <div class="container">
+            <div class="terms-content">
+
+                <div class="importance-item">
+                    <h3><span class="importance-item-number">1</span> Password Management</h3>
+                    <p>Using strong, unique passwords for each account to protect against unauthorized access.</p>
+                </div>
+
+                <div class="importance-item">
+                    <h3><span class="importance-item-number">2</span> Encryption</h3>
+                    <p>Converting sensitive data into unreadable text to ensure confidentiality when transmitted over the internet.</p>
+                </div>
+
+                <div class="importance-item">
+                    <h3><span class="importance-item-number">3</span> Firewalls</h3>
+                    <p>Hardware or software that monitors and controls incoming and outgoing network traffic to prevent unauthorized access.</p>
+                </div>
+
+                <div class="importance-item">
+                    <h3><span class="importance-item-number">4</span> Antivirus Protection</h3>
+                    <p>Software that detects, prevents, and removes malicious programs like viruses, worms, and trojans from your system.</p>
+                </div>
+
+                <div class="importance-item">
+                    <h3><span class="importance-item-number">5</span> Two-Factor Authentication (2FA)</h3>
+                    <p>An extra layer of security that requires both a password and a second form of verification to access accounts.</p>
+                </div>
+
+                <div class="importance-item">
+                    <h3><span class="importance-item-number">6</span> Data Backups</h3>
+                    <p>Regularly backing up critical data to prevent loss due to system failures, cyberattacks, or natural disasters.</p>
+                </div>
+
+                <div class="importance-item">
+                    <h3><span class="importance-item-number">7</span> Security Patches</h3>
+                    <p>Keeping software up to date by applying patches and updates that fix vulnerabilities and enhance security.</p>
+                </div>
+
+                <div class="importance-item">
+                    <h3><span class="importance-item-number">8</span> User Access Control</h3>
+                    <p>Implementing the principle of least privilege, ensuring users only have access to the information they need.</p>
+                </div>
+
+                <div class="importance-item">
+                    <h3><span class="importance-item-number">9</span> Intrusion Detection Systems (IDS)</h3>
+                    <p>Systems that monitor network or system activities for malicious activity or policy violations.</p>
+                </div>
+
+                <div class="importance-item">
+                    <h3><span class="importance-item-number">10</span> Phishing Awareness</h3>
+                    <p>Educating users on how to identify phishing emails and avoid providing sensitive information to fraudsters.</p>
+                </div>
+
+                <div class="importance-item">
+                    <h3><span class="importance-item-number">11</span> Network Segmentation</h3>
+                    <p>Dividing a network into multiple segments to limit the spread of cyberattacks within a network.</p>
+                </div>
+
+                <div class="importance-item">
+                    <h3><span class="importance-item-number">12</span> Secure Communication Channels</h3>
+                    <p>Using secure methods like HTTPS or encrypted email to protect communication from eavesdropping.</p>
+                </div>
+
+                <div class="importance-item">
+                    <h3><span class="importance-item-number">13</span> Endpoint Protection</h3>
+                    <p>Securing devices such as computers, smartphones, and tablets to prevent them from becoming entry points for cybercriminals.</p>
+                </div>
+
+                <div class="importance-item">
+                    <h3><span class="importance-item-number">14</span> Security Audits</h3>
+                    <p>Regularly reviewing and assessing your network, systems, and policies to identify vulnerabilities and areas for improvement.</p>
+                </div>
+
+                <div class="importance-item">
+                    <h3><span class="importance-item-number">15</span> Risk Management</h3>
+                    <p>Identifying, assessing, and mitigating potential security risks to prevent data breaches and other cybersecurity threats.</p>
+                </div>
+
+                <div class="importance-item">
+                    <h3><span class="importance-item-number">16</span> Incident Response Planning</h3>
+                    <p>Developing a clear plan for responding to cyberattacks or security incidents to minimize damage and recovery time.</p>
+                </div>
+
+                <div class="importance-item">
+                    <h3><span class="importance-item-number">17</span> Secure Software Development</h3>
+                    <p>Writing software with built-in security features to reduce vulnerabilities and protect users.</p>
+                </div>
+
+                <div class="importance-item">
+                    <h3><span class="importance-item-number">18</span> Data Masking</h3>
+                    <p>Obfuscating sensitive data to prevent unauthorized users from seeing it, especially in non-production environments.</p>
+                </div>
+
+                <div class="importance-item">
+                    <h3><span class="importance-item-number">19</span> Security Training</h3>
+                    <p>Regularly educating employees or users on best cybersecurity practices and potential threats to stay vigilant.</p>
+                </div>
+
+                <div class="importance-item">
+                    <h3><span class="importance-item-number">20</span> Compliance with Regulations</h3>
+                    <p>Adhering to industry-specific standards and laws, such as GDPR or HIPAA, to ensure legal and secure handling of data.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
