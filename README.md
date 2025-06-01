@@ -9,40 +9,41 @@ This cybersecurity educational website serves as an interactive learning platfor
 
 ## ✨ Features
 ### 1. Core Educational Features:
-· Interactive Learning Modules: Step-by-step tutorials covering fundamental cybersecurity concepts
-· Security Best Practices Guide: Comprehensive guidelines for personal and organizational security
-· Password Security Tools: Interactive password strength checker and generation tips
-· Phishing Awareness Training: Recognition techniques and prevention strategies
-· Data Protection Guidelines: Information on privacy, encryption, and secure data handling
-2. User Experience Features:
-· Responsive Design: Optimized for desktop, tablet, and mobile devices
-3. Technical Features:
-· Fast Loading: Optimized performance with minimal load times
-· Cross-browser Compatibility: Works seamlessly across all modern browsers
-Accessibility Compliant: WCAG guidelines implementation for inclusive design
-SEO Optimized: Enhanced visibility 
+· **Interactive Learning Modules**: Step-by-step tutorials covering fundamental cybersecurity concepts
+· **Security Best Practices Guide**: Comprehensive guidelines for personal and organizational security
+· **Password Security Tools**: Interactive password strength checker and generation tips
+· **Phishing Awareness Training**: Recognition techniques and prevention strategies
+· **Data Protection Guidelines**: Information on privacy, encryption, and secure data handling
 
+### 2. User Experience Features:
+· **Responsive Design**: Optimized for desktop, tablet, and mobile devices
 
+### 3. Technical Features:
+· **Fast Loading**: Optimized performance with minimal load times
+· **Cross-browser Compatibility**: Works seamlessly across all modern browsers
+· **Accessibility Compliant**: WCAG guidelines implementation for inclusive design
+· **SEO Optimized**: Enhanced visibility 
 
-🛠️ Tech Stack
-1. Frontend Technologies:
+## 🛠️ Tech Stack
+### 1. Frontend Technologies:
 · HTML5: Semantic markup and structure
 · CSS3: Modern styling with Flexbox/Grid layouts
 · JavaScript (ES6+): Interactive functionality and dynamic content
-2. Development Tools:
-Version Control: Git for source code management
-Code Editor: Compatible with VS Code, Sublime Text, or any preferred editor
-Browser DevTools: For debugging and testing
-Lighthouse: Performance and accessibility auditing
-3. Optional Enhancements:
+
+### 2. Development Tools:
+· Version Control: Git for source code management
+· Code Editor: Compatible with VS Code, Sublime Text, or any preferred editor
+· Browser DevTools: For debugging and testing
+· Lighthouse: Performance and accessibility auditing
+
+### 3. Optional Enhancements:
 · Font Awesome: Icon library for enhanced UI elements
 · Google Fonts: Typography enhancement
 · Chart.js: Data visualization for security metrics (if applicable)
 
 
-
-🎯 Project Goals
-Primary Objectives:
+## 🎯 Project Goals
+### Primary Objectives:
 · Education: Provide accessible cybersecurity education to diverse audiences
 · Awareness: Increase understanding of digital threats and vulnerabilities
 · Empowerment: Enable users to implement effective security practices
