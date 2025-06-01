@@ -1,2 +1,3 @@
 # Cybersecurity-Educational-Website
-Phishing? Ransomware? Identity theft? Sounds scary, but it doesn't have to be! We break down all the vital cybersecurity areas, making it easy (and even fun!) to learn how to keep your data safe, your devices secure, and your online adventures worry-free. Your digital peace of mind starts here!
+BE YOUR OWN DIGITAL BODYGUARD!
+Worried about internet scams? We'll show you how to guard your personal info and devices against all those sneaky online threats. Learn the easy way to stay safe and secure!
