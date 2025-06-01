@@ -66,8 +66,8 @@ This cybersecurity educational website serves as an interactive learning platfor
 · **Text editor or IDE**
 · **Local web server (optional but recommended for development)**
 
-### Installation Steps:
-## METHOD 1: Direct Download
+## Installation Steps:
+### METHOD 1: Direct Download
 Clone the Repository
 bash
 git clone https://github.com/mtxmln-devs/Cybersecurity-Educational-Website.git
