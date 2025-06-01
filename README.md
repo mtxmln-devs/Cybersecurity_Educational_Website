@@ -89,7 +89,6 @@ Start a Local Server Using Python:
 bash
 # Python 3
 python -m http.server 8000
-
 # Python 2
 python -m SimpleHTTPServer 8000
 Using Node.js (with http-server):
@@ -144,20 +143,38 @@ Cybersecurity-Educational-Website/
 │   ├── Icons/                      
 |   ├── (all_html-files).html      # UI icons
 |
-├── pages/
-│   ├── topics.html                # Learning modules
-│   ├──  facts.html                # Additional resources
-│   |── about.html                 # About page
-│   |── about.html                 # About page
-│   |── about.html                 # About page
-│   |── about.html                 # About page
-│   |── about.html                 # About page
-│   |── about.html                 # About page
+├── Pages/Topics
+│   ├── topics.html                # Main page of Learning modules
+│   ├── facts.html                 # Facts page
+│   |── tips.html                  # Tips page
+│   |── terms.html                 # Terminologies page
+│   |── dos-and-donts.html         # Do's and Dont's page
+│   |── importance.html            # Importance page
+│   |── ethics.html                # Ethics page
+│   |── funda.html                 # Fundamentals page
+|   |── cyberthreats.html          # Cyber Threats page
 |
+├── Pages/About us
+│   |── team.html                  # Team page
+│   |── story.html                 # Story page
+│   |── values.html                # Values page
 |
-├── Footers/
-├──  
+├── Footers/Quick-Link Pages
+│   |── index.html                 # Home page
+│   |── about.html                 # About page
+│   |── services.html              # About page
+│   |── contacts.html              # About page
 |
+├── Footers/Services Pages
+│   |── threatintelligence.html    # Financial Threat Intelligence page
+│   |── compliance.html            # Compliance Solutions page
+│   |── soc.html                   # SOC services page
+│   |── trainingprograms.html      # Training programs page
+|
+├── Footers/Legal Pages
+│   |── terms&conditions.html      # Financial Threat Intelligence page
+|   |── privacypolicy.html         # Privacy Policy page
+|   |── faq.html                   # Frequently Asked Questions page
 |
 └── README.md              # Project documentation
 
@@ -165,17 +182,14 @@ Cybersecurity-Educational-Website/
 🤝 Contributing
 I welcome contributions to improve the educational content and functionality! Please read my contributing guidelines and submit pull requests for review.
 
-
 🆘 Support
 If you encounter any issues or have questions:
 · Check the Issues section on GitHub
 · Contact Me
 · Review the documentation
 
-
 🔄 Updates
 Stay updated with the latest security information and website improvements by watching this repository for updates.
-
 
 Disclaimer: This website is for educational purposes only. Always consult with cybersecurity professionals for specific security implementations in production environments.
 
