@@ -115,6 +115,7 @@ git push origin feature/your-feature-name
 
 
 ## 📁 Project Structure
+```
 ### Cybersecurity-Educational-Website/
 ├── First page/
 ├── form.html                      # Login / Register Form
@@ -174,7 +175,7 @@ git push origin feature/your-feature-name
 |   |── faq.html                   # Frequently Asked Questions page
 |
 └── README.md              # Project documentation
-
+```
 
 
 ## 🤝 Contributing
