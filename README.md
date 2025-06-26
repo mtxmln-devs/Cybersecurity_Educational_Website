@@ -64,7 +64,7 @@
 ### METHOD 1: Direct Download
 1. **Clone the Repository**
 ```bash
-git clone https://github.com/mtxmln-devs/Cybersecurity-Educational-Website.git
+git clone https://github.com/mtxmln-devs/Cybersecurity_Educational_Website.git
 cd Cybersecurity-Educational-Website
 ```
 2. **Open the Website**
@@ -76,7 +76,7 @@ Or right-click and select "Open with" your preferred browser
 ### METHOD 2: Local Server Setup (Recommended)
 1. **Clone the Repository**
 ```bash
-git clone https://github.com/mtxmln-devs/Cybersecurity-Educational-Website.git
+git clone https://github.com/mtxmln-devs/Cybersecurity_Educational_Website.git
 cd Cybersecurity-Educational-Website
 ```
 
@@ -120,7 +120,7 @@ git push origin feature/your-feature-name
 
 ## 📁 Project Structure
 ```
-### Cybersecurity-Educational-Website/
+### Cybersecurity_Educational_Website/
 ├── First page/
 ├── form.html                      # Login / Register Form
 ├──
